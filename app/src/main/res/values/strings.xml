@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lotto</string>
+    <string name="로또번호추첨기">로또번호추첨기</string>
+    <string name="당첨번호">당첨번호</string>
+    <string name="todo">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="번호추첨">번호추첨</string>
+</resources>
