@@ -85,7 +85,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="1등 로또번호"
-            android:textColor="@color/color2"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +111,6 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="20dp"
         android:text="@string/번호추첨"
-        android:textColor="@color/color2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

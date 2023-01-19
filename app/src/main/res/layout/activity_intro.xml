@@ -7,43 +7,36 @@
     tools:context=".IntroActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_lotto"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="382dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="177dp"
-        android:text="로또6/45"
-        android:textColor="@color/color2"
+        android:text="@string/_6_45"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintEnd_toStartOf="@+id/button_pension"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_pension"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="382dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="177dp"
-        android:text="연금복권720+"
-        android:textColor="@color/color2"
+        android:text="@string/_720"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toEndOf="@+id/button_lotto" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="79dp"
-        android:text="종류를 선택해주세요"
+        android:text="@string/intro_main"
         android:textAlignment="center"
-        android:textColor="@color/color2"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
