@@ -7,6 +7,7 @@
     tools:context=".IntroActivity">
 
     <Button
+        android:textColor="@color/textColor"
         android:id="@+id/button_lotto"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -19,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:textColor="@color/textColor"
         android:id="@+id/button_pension"
         android:layout_width="130dp"
         android:layout_height="wrap_content"

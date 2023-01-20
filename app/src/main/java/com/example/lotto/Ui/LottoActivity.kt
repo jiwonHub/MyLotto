@@ -20,8 +20,20 @@ class LottoActivity : AppCompatActivity() {
         }
         //뷰모델 연결
         lottoViewModel = ViewModelProvider(this)[LottoViewModel::class.java]
-        lottoViewModel.currenText.observe(this, Observer {
-            binding.probability.text = it.toString()
+        lottoViewModel.lottoNumber1.observe(this, Observer {
+            binding.lottoNumber1.text = it.toString()
+        })
+        lottoViewModel.lottoNumber2.observe(this, Observer {
+            binding.lottoNumber2.text = it.toString()
+        })
+        lottoViewModel.lottoNumber3.observe(this, Observer {
+            binding.lottoNumber3.text = it.toString()
+        })
+        lottoViewModel.lottoNumber4.observe(this, Observer {
+            binding.lottoNumber4.text = it.toString()
+        })
+        lottoViewModel.lottoNumber5.observe(this, Observer {
+            binding.lottoNumber5.text = it.toString()
         })
 
         setContentView(binding.root)

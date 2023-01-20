@@ -6,13 +6,30 @@ import androidx.lifecycle.ViewModel
 
 class LottoViewModel: ViewModel() {
 
-    private val _currenText = MutableLiveData<List<Int>?>()
-    val currenText: LiveData<List<Int>?>
-        get() = _currenText
+    private val _lottoNumber1 = MutableLiveData<List<Int>?>()
+    val lottoNumber1: LiveData<List<Int>?>
+        get() = _lottoNumber1
+    private val _lottoNumber2 = MutableLiveData<List<Int>?>()
+    val lottoNumber2: LiveData<List<Int>?>
+        get() = _lottoNumber2
+    private val _lottoNumber3 = MutableLiveData<List<Int>?>()
+    val lottoNumber3: LiveData<List<Int>?>
+        get() = _lottoNumber3
+    private val _lottoNumber4 = MutableLiveData<List<Int>?>()
+    val lottoNumber4: LiveData<List<Int>?>
+        get() = _lottoNumber4
+    private val _lottoNumber5 = MutableLiveData<List<Int>?>()
+    val lottoNumber5: LiveData<List<Int>?>
+        get() = _lottoNumber5
 
     //TextView 업데이트
     fun updateText(){
-        _currenText.value = ran()
+        _lottoNumber1.value = ran()
+        _lottoNumber2.value = ran()
+        _lottoNumber3.value = ran()
+        _lottoNumber4.value = ran()
+        _lottoNumber5.value = ran()
+
     }
 
 }
