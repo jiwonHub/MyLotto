@@ -29,7 +29,6 @@ class LottoViewModel: ViewModel() {
         _lottoNumber3.value = ran()
         _lottoNumber4.value = ran()
         _lottoNumber5.value = ran()
-
     }
 
 }

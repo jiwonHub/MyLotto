@@ -1,16 +1,17 @@
 package com.example.lotto.Ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.databinding.ActivityLottoBinding
 import kotlinx.coroutines.*
-import java.util.stream.Collectors.counting
 
 class LottoActivity : AppCompatActivity() {
     lateinit var binding: ActivityLottoBinding
     private lateinit var lottoViewModel: LottoViewModel
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLottoBinding.inflate(layoutInflater)

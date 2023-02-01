@@ -12,7 +12,7 @@ import com.example.lotto.databinding.ActivityIntroBinding
 
 
 class IntroActivity : AppCompatActivity() {
-    lateinit var binding: ActivityIntroBinding
+    private lateinit var binding: ActivityIntroBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityIntroBinding.inflate(layoutInflater)
