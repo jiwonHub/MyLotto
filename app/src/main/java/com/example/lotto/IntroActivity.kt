@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.Ui.LottoActivity
 import com.example.lotto.Ui.LottoViewModel
 import com.example.lotto.Ui.PensionActivity
+import com.example.lotto.Ui.WebViewActivity
 import com.example.lotto.databinding.ActivityIntroBinding
 
 
@@ -25,6 +26,11 @@ class IntroActivity : AppCompatActivity() {
         //연금 복권 버튼 클릭시 pensionActivity로 이동
         binding.buttonPension.setOnClickListener {
             val intent = Intent(this,PensionActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.webViewButton.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
 
