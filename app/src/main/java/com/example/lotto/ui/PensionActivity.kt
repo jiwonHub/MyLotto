@@ -1,4 +1,4 @@
-package com.example.lotto.Ui
+package com.example.lotto.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

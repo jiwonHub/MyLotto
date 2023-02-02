@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="46dp"
-    tools:context=".Ui.LottoActivity">
+    tools:context=".ui.LottoActivity">
 
     <TextView
         android:id="@+id/textView"

@@ -1,4 +1,4 @@
-package com.example.lotto.Ui
+package com.example.lotto.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -29,6 +29,6 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     companion object{
-        private const val DEFAULT_URL = "https://www.dhlottery.co.kr/common.do?method=main"
+        private const val DEFAULT_URL = "https://m.dhlottery.co.kr/store.do?method=sellerInfo645"
     }
 }

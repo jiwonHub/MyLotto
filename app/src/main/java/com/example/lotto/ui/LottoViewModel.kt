@@ -1,4 +1,4 @@
-package com.example.lotto.Ui
+package com.example.lotto.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
