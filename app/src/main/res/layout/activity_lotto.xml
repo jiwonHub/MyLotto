@@ -110,10 +110,10 @@
             android:contentDescription="@string/todo"
             android:layerType="software"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/dash_line" />
+            android:src="@drawable/dash_line" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -128,7 +128,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView1"
-            app:srcCompat="@drawable/dash_line" />
+            android:src="@drawable/dash_line"/>
 
         <ImageView
             android:id="@+id/imageView2"
@@ -143,7 +143,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/dash_line" />
+            android:src="@drawable/dash_line"/>
 
         <TextView
             android:id="@+id/textView1"

@@ -74,8 +74,10 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="연금복권 720+"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintBottom_toTopOf="@+id/imageView4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,11 +87,11 @@
             android:id="@+id/lottoNumber1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="71dp"
             android:text="A :"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <TextView
             android:id="@+id/lottoNumber2"
@@ -102,60 +104,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lottoNumber1" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="0dp"
-            android:layout_height="1.5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="10dp"
-            android:contentDescription="@string/todo"
-            android:layerType="software"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/dash_line" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="0dp"
-            android:layout_height="1.5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="10dp"
-            android:contentDescription="@string/todo"
-            android:layerType="software"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView1"
-            app:srcCompat="@drawable/dash_line" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="0dp"
-            android:layout_height="1.5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="40dp"
-            android:contentDescription="@string/todo2"
-            android:layerType="software"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/dash_line" />
-
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="25dp"
             android:text="번호를 추첨해주세요!"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <TextView
             android:id="@+id/groupNumber1"
@@ -199,6 +156,34 @@
             android:text="조"
             app:layout_constraintBottom_toBottomOf="@+id/lottoNumber5"
             app:layout_constraintEnd_toStartOf="@+id/lottoNumber5" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="1.5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:src="@drawable/dash_line"
+            android:contentDescription="TODO" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="1.5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1"
+            android:src="@drawable/dash_line"
+            android:contentDescription="TODO" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
