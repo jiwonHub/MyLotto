@@ -1,5 +1,6 @@
 package com.example.lotto.ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -7,8 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.databinding.ActivityPensionBinding
 
 class PensionActivity : AppCompatActivity() {
-    lateinit var binding : ActivityPensionBinding
+    private lateinit var binding : ActivityPensionBinding
     private lateinit var pensionViewmodel: PensionViewModel
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPensionBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)

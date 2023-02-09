@@ -1,13 +1,15 @@
 package com.example.lotto
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.lotto.ui.LottoActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.lotto.ui.WebViewActivity
 import com.example.lotto.databinding.ActivityIntroBinding
 import com.example.lotto.ui.PensionActivity
+import com.google.gson.JsonParser
+import kotlinx.coroutines.*
 
+import java.net.URL
 
 
 class IntroActivity : AppCompatActivity() {
@@ -18,7 +20,7 @@ class IntroActivity : AppCompatActivity() {
         setContentView(binding.root)
         //로또 버튼 클릭시 LottoActivity로 이동
         binding.buttonLotto.setOnClickListener {
-            val intent = Intent(this, LottoActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -32,6 +34,8 @@ class IntroActivity : AppCompatActivity() {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
+
+
 
     }
 }

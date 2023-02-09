@@ -9,7 +9,7 @@ import com.example.lotto.databinding.ActivityLottoBinding
 import kotlinx.coroutines.*
 
 class LottoActivity : AppCompatActivity() {
-    lateinit var binding: ActivityLottoBinding
+    private lateinit var binding: ActivityLottoBinding
     private lateinit var lottoViewModel: LottoViewModel
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
