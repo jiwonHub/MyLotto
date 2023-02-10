@@ -8,8 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.databinding.ActivityPensionBinding
 
 class PensionActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityPensionBinding
+    private lateinit var binding: ActivityPensionBinding
     private lateinit var pensionViewmodel: PensionViewModel
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPensionBinding.inflate(layoutInflater)
@@ -22,35 +23,41 @@ class PensionActivity : AppCompatActivity() {
             pensionViewmodel.updateText()
         }
         pensionViewmodel.lottoNumber1.observe(this, Observer {
-            binding.lottoNumber1.text = it.toString()
+            if (it != null) {
+                binding.lottoNumber1.text =
+                    it[0].toString() + "조" + it.slice(1..6).toString().replace('[', ' ')
+                        .replace(']', ' ')
+            }
         })
         pensionViewmodel.lottoNumber2.observe(this, Observer {
-            binding.lottoNumber2.text = it.toString()
+            if (it != null) {
+                binding.lottoNumber2.text =
+                    it[0].toString() + "조" + it.slice(1..6).toString().replace('[', ' ')
+                        .replace(']', ' ')
+            }
         })
         pensionViewmodel.lottoNumber3.observe(this, Observer {
-            binding.lottoNumber3.text = it.toString()
+            if (it != null) {
+                binding.lottoNumber3.text =
+                    it[0].toString() + "조" + it.slice(1..6).toString().replace('[', ' ')
+                        .replace(']', ' ')
+            }
         })
         pensionViewmodel.lottoNumber4.observe(this, Observer {
-            binding.lottoNumber4.text = it.toString()
+            if (it != null) {
+                binding.lottoNumber4.text =
+                    it[0].toString() + "조" + it.slice(1..6).toString().replace('[', ' ')
+                        .replace(']', ' ')
+            }
         })
         pensionViewmodel.lottoNumber5.observe(this, Observer {
-            binding.lottoNumber5.text = it.toString()
+            if (it != null) {
+                binding.lottoNumber5.text =
+                    it[0].toString() + "조" + it.slice(1..6).toString().replace('[', ' ')
+                        .replace(']', ' ')
+            }
         })
-        pensionViewmodel.groupNumber1.observe(this) {
-            binding.groupNumber1.text = it.toString() + "조"
-        }
-        pensionViewmodel.groupNumber2.observe(this) {
-            binding.groupNumber2.text = it.toString() + "조"
-        }
-        pensionViewmodel.groupNumber3.observe(this) {
-            binding.groupNumber3.text = it.toString() + "조"
-        }
-        pensionViewmodel.groupNumber4.observe(this) {
-            binding.groupNumber4.text = it.toString() + "조"
-        }
-        pensionViewmodel.groupNumber5.observe(this) {
-            binding.groupNumber5.text = it.toString() + "조"
-        }
+
         setContentView(binding.root)
     }
 }

@@ -1,10 +1,10 @@
-package com.example.lotto.ui
+package com.example.lotto.ui.lotto.lottery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class LottoViewModel: ViewModel() {
+class HomeViewModel : ViewModel() {
 
     private val _lottoNumber1 = MutableLiveData<List<Int>?>()
     val lottoNumber1: LiveData<List<Int>?>

@@ -1,4 +1,4 @@
-package com.example.lotto.ui.dashboard
+package com.example.lotto.ui.lotto.statistics
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -18,10 +18,10 @@ class DashboardViewModel : ViewModel() {
     //직전회차 당첨번호
     fun updateText(){
         CoroutineScope(Dispatchers.IO).launch {
-            val PastLottoNumber = getLottoNumbers().slice(0..5).toString().replace('[',' ').replace(']',' ')
+            val pastLottoNumber = getLottoNumbers().slice(0..5).toString().replace('[',' ').replace(']',' ')
             val bonusNumber = getLottoNumbers().last()
             withContext(Dispatchers.Main) {
-                _lottoNumber1.value = "$PastLottoNumber+$bonusNumber"
+                _lottoNumber1.value = "$pastLottoNumber+$bonusNumber"
             }
         }
     }

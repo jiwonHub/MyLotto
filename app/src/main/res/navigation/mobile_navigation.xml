@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.lotto.ui.home.HomeFragment"
+        android:name="com.example.lotto.ui.lotto.lottery.LotteryFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_lottery" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.lotto.ui.dashboard.DashboardFragment"
+        android:name="com.example.lotto.ui.lotto.statistics.StatisticsFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_statistics" />
 
 </navigation>

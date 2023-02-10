@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.lotto.LottoActivity"
             android:exported="false"
             android:label="@string/title_activity_main">
             <meta-data
@@ -25,13 +25,6 @@
         </activity>
         <activity
             android:name=".ui.PensionActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.LottoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
