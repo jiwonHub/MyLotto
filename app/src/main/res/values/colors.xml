@@ -13,4 +13,9 @@
     <color name='color1'>#e4d038</color>
     <color name='textColor'>#000000</color>
     <color name='color3'>#8f8223</color>
+    <color name="blue">#5FB5D8</color>
+    <color name="yello">#D7C400</color>
+    <color name="red">#FF7272</color>
+    <color name="gray">#AAAAAA</color>
+    <color name="green">#B0D840</color>
 </resources>

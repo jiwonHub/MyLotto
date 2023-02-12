@@ -26,9 +26,6 @@ class DashboardViewModel : ViewModel() {
         }
     }
 
-
-
-
     }
 
 //직전회차 로또 당첨 번호 가져오기
