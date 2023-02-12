@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.R
 import com.example.lotto.databinding.FragmentLotteryBinding
-import kotlinx.android.synthetic.main.fragment_lottery.*
 
 class LotteryFragment : Fragment() {
 
