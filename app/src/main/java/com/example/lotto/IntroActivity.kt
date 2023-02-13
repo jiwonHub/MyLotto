@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.lotto.ui.WebViewActivity
 import com.example.lotto.databinding.ActivityIntroBinding
 import com.example.lotto.ui.lotto.LottoActivity
-import com.example.lotto.ui.PensionActivity
+import com.example.lotto.ui.pension.PensionActivity
 
 
 class IntroActivity : AppCompatActivity() {

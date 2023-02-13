@@ -1,4 +1,4 @@
-package com.example.lotto.ui
+package com.example.lotto.ui.pension
 
 import android.annotation.SuppressLint
 import android.app.Application
@@ -41,16 +41,6 @@ class PensionViewModel(application: Application) : AndroidViewModel(application)
     }
 
 
-    @SuppressLint("UseRequireInsteadOfGet")
-    private fun setNumberBackGround(number: Int, textView: TextView){
-        when(number){ // 숫자별로 색깔 꾸미기
-            in 1..10 -> textView.background = ContextCompat.getDrawable(context, R.drawable.circle_yello)
-            in 11..20 -> textView.background = ContextCompat.getDrawable(context, R.drawable.circle_blue)
-            in 21..30 -> textView.background = ContextCompat.getDrawable(context, R.drawable.circle_red)
-            in 31..40 -> textView.background = ContextCompat.getDrawable(context, R.drawable.circle_gray)
-            in 41..50 -> textView.background = ContextCompat.getDrawable(context, R.drawable.circle_green)
-        }
-    }
 }
     //난수 발생 함수
     private fun ran(): List<Int> {
