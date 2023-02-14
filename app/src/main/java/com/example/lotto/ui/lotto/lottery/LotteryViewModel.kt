@@ -35,10 +35,10 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     //TextView 업데이트
     fun updateText(){
         _lottoNumber1.value = ran()
-       /* _lottoNumber2.value = ran()
+        _lottoNumber2.value = ran()
         _lottoNumber3.value = ran()
         _lottoNumber4.value = ran()
-        _lottoNumber5.value = ran()*/
+        _lottoNumber5.value = ran()
     }
 
     @SuppressLint("UseRequireInsteadOfGet")

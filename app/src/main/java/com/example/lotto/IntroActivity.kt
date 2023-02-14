@@ -3,8 +3,8 @@ package com.example.lotto
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lotto.ui.WebViewActivity
 import com.example.lotto.databinding.ActivityIntroBinding
+import com.example.lotto.ui.WebViewActivity
 import com.example.lotto.ui.lotto.LottoActivity
 import com.example.lotto.ui.pension.PensionActivity
 
@@ -15,6 +15,7 @@ class IntroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityIntroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         //로또 버튼 클릭시 LottoActivity로 이동
         binding.buttonLotto.setOnClickListener {
             val intent = Intent(this, LottoActivity::class.java)
@@ -35,4 +36,6 @@ class IntroActivity : AppCompatActivity() {
 
 
     }
+
 }
+

@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.databinding.ActivityPensionBinding
-import com.example.lotto.ui.PensionViewModel
 
 class PensionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPensionBinding

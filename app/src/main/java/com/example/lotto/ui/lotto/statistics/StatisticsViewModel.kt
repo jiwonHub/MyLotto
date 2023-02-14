@@ -30,7 +30,7 @@ class DashboardViewModel : ViewModel() {
 
 //직전회차 로또 당첨 번호 가져오기
 private fun getLottoNumbers(): ArrayList<Int> {
-    var round = 1053
+    var round = 1054
     while (true){
 
         val url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=${round.toString()}"
