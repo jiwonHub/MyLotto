@@ -13,6 +13,7 @@ import com.example.lotto.ui.lotto.DialogCustom
 class LotteryFragment : Fragment() {
 
     private var _binding: FragmentLotteryBinding? = null
+    private var exnum : ArrayList<Int>? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,12 +28,19 @@ class LotteryFragment : Fragment() {
         val lottoViewModel =
             ViewModelProvider(this)[HomeViewModel::class.java]
 
+
         _binding = FragmentLotteryBinding.inflate(inflater, container, false)
 
         //제외 수 클릭
         binding.delNum.setOnClickListener {
             DialogCustom(requireContext()).show()
         }
+        DialogCustom(requireContext()).setOnClickedListener(object : DialogCustom.ButtonClickListener{
+            override fun onClicked(exceptNumber: String) {
+                binding.textView5.text = exceptNumber
+            }
+
+        })
         //추첨 번호 클릭시
         binding.start.setOnClickListener {
             lottoViewModel.updateText()

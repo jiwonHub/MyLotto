@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import com.example.lotto.R
 import com.example.lotto.databinding.DialogCustomBinding
 
 class DialogCustom(
@@ -12,16 +13,15 @@ class DialogCustom(
 ) : Dialog(context) { // 뷰를 띄워야하므로 Dialog 클래스는 context를 인자로 받는다.
 
     private lateinit var binding: DialogCustomBinding
+    private var onClickedListener: ButtonClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // 만들어놓은 dialog_profile.xml 뷰를 띄운다.
         binding = DialogCustomBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        initViews()
-    }
 
-    private fun initViews() = with(binding) {
+        setContentView(binding.root)
+
+        val exceptNumber: ArrayList<Int> = ArrayList()
         // 뒤로가기 버튼, 빈 화면 터치를 통해 dialog가 사라지지 않도록
         setCancelable(false)
 
@@ -30,9 +30,27 @@ class DialogCustom(
         // corner radius의 적용이 보이지 않는다.
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        // OK Button 클릭에 대한 Callback 처리. 이 부분은 상황에 따라 자유롭게!
-        binding.button.setOnClickListener{
+        binding.num1.setOnClickListener {
+            exceptNumber.add(1)
+            binding.num1.setBackgroundResource(R.drawable.circle_blue)
+        }
+        binding.savebutton.setOnClickListener {
+            onClickedListener?.onClicked(exceptNumber.toString())
+
             dismiss()
         }
-        }
     }
+
+    interface ButtonClickListener {
+        fun onClicked(exceptNumber: String)
+
+    }
+
+
+    fun setOnClickedListener(listner: ButtonClickListener) {
+        onClickedListener = listner
+    }
+
+
+}
+

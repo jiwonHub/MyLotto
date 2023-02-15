@@ -8,11 +8,9 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.lotto.R
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
-
     @SuppressLint("StaticFieldLeak")
     private val context = getApplication<Application>().applicationContext
 
@@ -31,7 +29,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val _lottoNumber5 = MutableLiveData<List<Int>?>()
     val lottoNumber5: LiveData<List<Int>?>
         get() = _lottoNumber5
-
     //TextView 업데이트
     fun updateText(){
         _lottoNumber1.value = ran()
@@ -50,7 +47,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             in 31..40 -> textView.background = ContextCompat.getDrawable(context, R.drawable.circle_gray)
             in 41..50 -> textView.background = ContextCompat.getDrawable(context, R.drawable.circle_green)
         }
-
         textView.isVisible = true
     }
 
