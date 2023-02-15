@@ -1,18 +1,14 @@
 package com.example.lotto.ui.lotto.lottery
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.lotto.R
 import com.example.lotto.databinding.FragmentLotteryBinding
+import com.example.lotto.ui.lotto.DialogCustom
 
 class LotteryFragment : Fragment() {
 
@@ -32,6 +28,11 @@ class LotteryFragment : Fragment() {
             ViewModelProvider(this)[HomeViewModel::class.java]
 
         _binding = FragmentLotteryBinding.inflate(inflater, container, false)
+
+        //제외 수 클릭
+        binding.delNum.setOnClickListener {
+            DialogCustom(requireContext()).show()
+        }
         //추첨 번호 클릭시
         binding.start.setOnClickListener {
             lottoViewModel.updateText()
