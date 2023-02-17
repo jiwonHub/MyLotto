@@ -33,14 +33,14 @@ class LotteryFragment : Fragment() {
 
         //제외 수 클릭
         binding.delNum.setOnClickListener {
-            DialogCustom(requireContext()).show()
+            val dialog = DialogCustom(requireContext())
+            dialog.showDia()
+            dialog.setOnClickListener(object :DialogCustom.ButtonClickListener{
+                override fun onClicked(text: String) {
+                    binding.textView5.text = text
+                }
+            })
         }
-        DialogCustom(requireContext()).setOnClickedListener(object : DialogCustom.ButtonClickListener{
-            override fun onClicked(exceptNumber: String) {
-                binding.textView5.text = exceptNumber
-            }
-
-        })
         //추첨 번호 클릭시
         binding.start.setOnClickListener {
             lottoViewModel.updateText()
