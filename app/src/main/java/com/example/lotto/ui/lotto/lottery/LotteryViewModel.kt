@@ -29,6 +29,9 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val _lottoNumber5 = MutableLiveData<List<Int>?>()
     val lottoNumber5: LiveData<List<Int>?>
         get() = _lottoNumber5
+
+
+
     //TextView 업데이트
     fun updateText(){
         _lottoNumber1.value = ran()

@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.databinding.FragmentStatisticsBinding
 import kotlinx.coroutines.*
+import org.jsoup.Jsoup
 
 
 class StatisticsFragment : Fragment() {
@@ -28,12 +29,25 @@ class StatisticsFragment : Fragment() {
         //뷰모델 연결
         val lottoViewModel =
             ViewModelProvider(this)[DashboardViewModel::class.java]
+        val number : MutableList<String> = mutableListOf()
 
         lottoViewModel.updateText()
 
         lottoViewModel.lottoNumber1.observe(viewLifecycleOwner, Observer {
             binding.PastLottoNumber.text = it
         })
+        CoroutineScope(Dispatchers.IO).launch {
+            val url = "https://www.dhlottery.co.kr/gameResult.do?method=statByNumber"
+            val doc = Jsoup.connect(url).get()
+            for (i in 0..44){
+                number.add(doc.select("table#printTarget").select("tbody").select("tr")[i].select("td")[2].ownText())
+            }
+            withContext(Dispatchers.Main) {
+                binding.textView6.text = number.toString()
+
+            }
+        }
+
 
 
         return binding.root
