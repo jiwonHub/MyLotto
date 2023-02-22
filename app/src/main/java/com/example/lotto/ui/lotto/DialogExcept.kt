@@ -77,7 +77,6 @@ class DialogExcept(
                     binding.num2.setBackgroundResource(R.drawable.circle_red)
                 }
             }
-
         }
         binding.num3.setOnClickListener {
             if (pickNumberSet.size >= 5){
@@ -97,7 +96,6 @@ class DialogExcept(
                     binding.num3.setBackgroundResource(R.drawable.circle_red)
                 }
             }
-
         }
         binding.num4.setOnClickListener {
             if (pickNumberSet.size >= 5){
@@ -118,7 +116,6 @@ class DialogExcept(
                     binding.num4.setBackgroundResource(R.drawable.circle_red)
                 }
             }
-
         }
         binding.num5.setOnClickListener {
             if (pickNumberSet.size >= 5){
@@ -138,7 +135,6 @@ class DialogExcept(
                     binding.num5.setBackgroundResource(R.drawable.circle_red)
                 }
             }
-
         }
         binding.num6.setOnClickListener {
             if (pickNumberSet.size >= 5){
@@ -425,7 +421,7 @@ class DialogExcept(
                 Toast.makeText(context, "제외수는 5개까지만 선택할 수 있습니다.", Toast.LENGTH_SHORT).show()
                 if (pickNumberSet.contains(20)) {
                     pickNumberSet.remove(20)
-                    binding.num6.setBackgroundResource(R.drawable.button_custom)
+                    binding.num20.setBackgroundResource(R.drawable.button_custom)
                 }else{
                     return@setOnClickListener
                 }
@@ -472,10 +468,10 @@ class DialogExcept(
             }else{
                 if (pickNumberSet.contains(22)){
                     pickNumberSet.remove(22)
-                    binding.num18.setBackgroundResource(R.drawable.button_custom)
+                    binding.num22.setBackgroundResource(R.drawable.button_custom)
                 }else{
                     pickNumberSet.add(22)
-                    binding.num18.setBackgroundResource(R.drawable.circle_red)
+                    binding.num22.setBackgroundResource(R.drawable.circle_red)
                 }
             }
 
