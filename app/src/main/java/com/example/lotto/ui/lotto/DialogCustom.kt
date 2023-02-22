@@ -13,6 +13,7 @@ class DialogCustom(
     private val dialog = Dialog(context)
     private val binding : DialogCustomBinding = DialogCustomBinding.inflate(dialog.layoutInflater)
     private val numarr : MutableList<Int> = mutableListOf()
+
     fun showDia(){
         dialog.setContentView(binding.root)
         // 뒤로가기 버튼 및 화면 밖 터치시 다이어로그 꺼짐

@@ -8,12 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.databinding.FragmentLotteryBinding
+import com.example.lotto.ui.lotto.DialogFix
 import com.example.lotto.ui.lotto.DialogCustom
 
 class LotteryFragment : Fragment() {
 
     private var _binding: FragmentLotteryBinding? = null
     private var exnum : ArrayList<Int>? = null
+    private var didrun = false // 자동생성 되었는지
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -41,9 +43,22 @@ class LotteryFragment : Fragment() {
                 }
             })
         }
+
+        // 고정 수 클릭
+        binding.fixNum.setOnClickListener {
+            val dialog = DialogFix(requireContext())
+            dialog.showDia()
+            dialog.setOnClickListener(object :DialogFix.ButtonClickListener{
+                override fun onClicked(text: String) {
+                    binding.textView6.text = text
+                }
+            })
+        }
+
         //추첨 번호 클릭시
         binding.start.setOnClickListener {
             lottoViewModel.updateText()
+            didrun = true
         }
 
         lottoViewModel.lottoNumber1.observe(viewLifecycleOwner, Observer {
