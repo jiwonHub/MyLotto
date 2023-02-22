@@ -12,7 +12,6 @@ import com.example.lotto.databinding.FragmentLotteryBinding
 class LotteryFragment : Fragment() {
 
     private var _binding: FragmentLotteryBinding? = null
-    private var exnum : ArrayList<Int>? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
