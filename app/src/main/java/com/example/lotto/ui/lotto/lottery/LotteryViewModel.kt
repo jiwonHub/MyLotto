@@ -3,7 +3,6 @@ package com.example.lotto.ui.lotto.lottery
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import android.util.Log
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
@@ -11,7 +10,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.lotto.R
-import com.example.lotto.ui.lotto.DialogFix
+import com.example.lotto.ui.lotto.DialogCustom
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
     @SuppressLint("StaticFieldLeak")
@@ -32,16 +31,19 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val _lottoNumber5 = MutableLiveData<List<Int>?>()
     val lottoNumber5: LiveData<List<Int>?>
         get() = _lottoNumber5
+    private val _lottoNumber6 = MutableLiveData<List<Int>?>()
+    val lottoNumber6: LiveData<List<Int>?>
+        get() = _lottoNumber6
 
 
 
     //TextView 업데이트
     fun updateText(){
-        _lottoNumber1.value = ran(context)
-        _lottoNumber2.value = ran(context)
-        _lottoNumber3.value = ran(context)
-        _lottoNumber4.value = ran(context)
-        _lottoNumber5.value = ran(context)
+        _lottoNumber1.value = ran()
+        _lottoNumber2.value = ran()
+        _lottoNumber3.value = ran()
+        _lottoNumber4.value = ran()
+        _lottoNumber5.value = ran()
     }
 
     @SuppressLint("UseRequireInsteadOfGet")
@@ -55,27 +57,37 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
         textView.isVisible = true
     }
+    fun dialogShow(context: Context){
+        val dialog = DialogCustom(context)
+        dialog.showDia()
+        dialog.setOnClickListener(object : DialogCustom.ButtonClickListener{
+            override fun onClicked(text: MutableList<Int>) {
+                _lottoNumber6.value = text
+            }
+
+        })
+    }
 
 }
 //난수 발생 함수
-private fun ran(context: Context): List<Int> {
-    val dialogFix = DialogFix(context)
-    val pickNumberSet = dialogFix.setPickNumber()
-    Log.d("list", pickNumberSet.toString())
-    val set = mutableListOf<Int>().apply {
-        for(i in 1..45){
-            if(pickNumberSet.contains(i)){
-                continue
-            }
-            this.add(i)
-        }
-    }
-    set.shuffle()
-
-    val newList = pickNumberSet.toList() + set.subList(0,6 - pickNumberSet.size)
-
-    return newList.sorted()
-}
+//private fun ran(context: Context): List<Int> {
+//    val dialogFix = DialogFix(context)
+//    val pickNumberSet = dialogFix.setPickNumber()
+//    Log.d("list", pickNumberSet.toString())
+//    val set = mutableListOf<Int>().apply {
+//        for(i in 1..45){
+//            if(pickNumberSet.contains(i)){
+//                continue
+//            }
+//            this.add(i)
+//        }
+//    }
+//    set.shuffle()
+//
+//    val newList = pickNumberSet.toList() + set.subList(0,6 - pickNumberSet.size)
+//
+//    return newList.sorted()
+//}
 private fun ran(): List<Int> {
     val set = mutableSetOf<Int>()
     while(set.size < 6){

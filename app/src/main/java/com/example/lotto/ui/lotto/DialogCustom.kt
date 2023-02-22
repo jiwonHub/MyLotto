@@ -28,7 +28,7 @@ class DialogCustom(
         buttonClickEvent()
 
         binding.savebutton.setOnClickListener {
-            onClickListener.onClicked(numarr.toString())
+            onClickListener.onClicked(numarr)
             dialog.dismiss()
         }
 
@@ -67,7 +67,7 @@ class DialogCustom(
     }
 
     interface ButtonClickListener{
-        fun onClicked(text: String)
+        fun onClicked(text: MutableList<Int>)
     }
     private lateinit var onClickListener: ButtonClickListener
 
