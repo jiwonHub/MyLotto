@@ -41,7 +41,10 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     val exceptNumber: LiveData<List<Int>?>
         get() = _exceptNumber
 
-
+    //고정수
+    var excep : MutableList<Int> = mutableListOf()
+    //제외수
+    var fix : HashSet<Int> = HashSet()
 
     //TextView 업데이트
     fun updateText(){
@@ -69,6 +72,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         dialog.setOnClickListener(object : DialogCustom.ButtonClickListener{
             override fun onClicked(text: MutableList<Int>) {
                 _exceptNumber.value = text
+                excep = text
             }
 
         })
@@ -79,36 +83,26 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         dialog.setOnClickListener(object : DialogFix.ButtonClickListener{
             override fun onClicked(text: HashSet<Int>) {
                 _fixNumber.value = text
+                fix = text
             }
-
         })
     }
+    private fun ran(): List<Int> {
+        val set = mutableSetOf<Int>()
+        for (i in fix){
+            set.add(i)
+        }
+        while(set.size < 6){
+            val i = (1..45).random()
+            if (i !in excep){
+                set.add(i)
+            }
+        }
+        return set.sorted()
+    }
+
 
 }
-//난수 발생 함수
-//private fun ran(context: Context): List<Int> {
-//    val dialogFix = DialogFix(context)
-//    val pickNumberSet = dialogFix.setPickNumber()
-//    Log.d("list", pickNumberSet.toString())
-//    val set = mutableListOf<Int>().apply {
-//        for(i in 1..45){
-//            if(pickNumberSet.contains(i)){
-//                continue
-//            }
-//            this.add(i)
-//        }
-//    }
-//    set.shuffle()
-//
-//    val newList = pickNumberSet.toList() + set.subList(0,6 - pickNumberSet.size)
-//
-//    return newList.sorted()
-//}
-private fun ran(): List<Int> {
-    val set = mutableSetOf<Int>()
-    while(set.size < 6){
-        set.add((1..45).random())
-    }
-    return set.sorted()
-}
+
+
 
