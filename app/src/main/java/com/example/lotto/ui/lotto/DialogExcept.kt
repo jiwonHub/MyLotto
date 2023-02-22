@@ -15,6 +15,8 @@ class DialogExcept(
     private val binding : DialogCustomBinding = DialogCustomBinding.inflate(dialog.layoutInflater)
     private val pickNumberSet = hashSetOf<Int>()
 
+    private var click : Boolean = true
+
     fun showDia(){
         dialog.setContentView(binding.root)
         // 뒤로가기 버튼 및 화면 밖 터치시 다이어로그 꺼짐
@@ -38,64 +40,105 @@ class DialogExcept(
 
     private fun buttonClickEvent(){
         binding.num1.setOnClickListener {
-            if (pickNumberSet.size >= 5){
-                Toast.makeText(context, "제외수는 5개까지만 선택할 수 있습니다.", Toast.LENGTH_SHORT).show()
-            }
-            if (pickNumberSet.contains(1)){
-                pickNumberSet.remove(1)
-                binding.num1.setBackgroundResource(R.drawable.button_custom)
-            }else{
-                pickNumberSet.add(1)
-                binding.num1.setBackgroundResource(R.drawable.circle_blue)
-            }
+                if (pickNumberSet.size >= 5){
+                    Toast.makeText(context, "제외수는 5개까지만 선택할 수 있습니다.", Toast.LENGTH_SHORT).show()
+                    if (pickNumberSet.contains(1)) {
+                        pickNumberSet.remove(1)
+                        binding.num1.setBackgroundResource(R.drawable.button_custom)
+                    }else{
+                        return@setOnClickListener
+                    }
+                }else{
+                    if (pickNumberSet.contains(1)){
+                        pickNumberSet.remove(1)
+                        binding.num1.setBackgroundResource(R.drawable.button_custom)
+                    }else {
+                        pickNumberSet.add(1)
+                        binding.num1.setBackgroundResource(R.drawable.circle_blue)
+                    }
+                }
+
         }
         binding.num2.setOnClickListener {
             if (pickNumberSet.size >= 5){
                 Toast.makeText(context, "제외수는 5개까지만 선택할 수 있습니다.", Toast.LENGTH_SHORT).show()
-            }
-            if (pickNumberSet.contains(2)){
-                pickNumberSet.remove(2)
-                binding.num2.setBackgroundResource(R.drawable.button_custom)
+                if (pickNumberSet.contains(2)) {
+                    pickNumberSet.remove(2)
+                    binding.num2.setBackgroundResource(R.drawable.button_custom)
+                }else{
+                    return@setOnClickListener
+                }
             }else{
-                pickNumberSet.add(2)
-                binding.num2.setBackgroundResource(R.drawable.circle_blue)
+                if (pickNumberSet.contains(2)){
+                    pickNumberSet.remove(2)
+                    binding.num2.setBackgroundResource(R.drawable.button_custom)
+                }else{
+                    pickNumberSet.add(2)
+                    binding.num2.setBackgroundResource(R.drawable.circle_blue)
+                }
             }
+
         }
         binding.num3.setOnClickListener {
             if (pickNumberSet.size >= 5){
                 Toast.makeText(context, "제외수는 5개까지만 선택할 수 있습니다.", Toast.LENGTH_SHORT).show()
-            }
-            if (pickNumberSet.contains(3)){
-                pickNumberSet.remove(3)
-                binding.num3.setBackgroundResource(R.drawable.button_custom)
+                if (pickNumberSet.contains(3)) {
+                    pickNumberSet.remove(3)
+                    binding.num3.setBackgroundResource(R.drawable.button_custom)
+                }else{
+                    return@setOnClickListener
+                }
             }else{
-                pickNumberSet.add(3)
-                binding.num3.setBackgroundResource(R.drawable.circle_blue)
+                if (pickNumberSet.contains(3)){
+                    pickNumberSet.remove(3)
+                    binding.num3.setBackgroundResource(R.drawable.button_custom)
+                }else{
+                    pickNumberSet.add(3)
+                    binding.num3.setBackgroundResource(R.drawable.circle_blue)
+                }
             }
+
         }
         binding.num4.setOnClickListener {
             if (pickNumberSet.size >= 5){
                 Toast.makeText(context, "제외수는 5개까지만 선택할 수 있습니다.", Toast.LENGTH_SHORT).show()
-            }
-            if (pickNumberSet.contains(4)){
-                pickNumberSet.remove(4)
-                binding.num4.setBackgroundResource(R.drawable.button_custom)
+                if (pickNumberSet.contains(4)) {
+                    pickNumberSet.remove(4)
+                    binding.num4.setBackgroundResource(R.drawable.button_custom)
+                }else{
+                    return@setOnClickListener
+                }
+
             }else{
-                pickNumberSet.add(4)
-                binding.num4.setBackgroundResource(R.drawable.circle_blue)
+                if (pickNumberSet.contains(4)){
+                    pickNumberSet.remove(4)
+                    binding.num4.setBackgroundResource(R.drawable.button_custom)
+                }else{
+                    pickNumberSet.add(4)
+                    binding.num4.setBackgroundResource(R.drawable.circle_blue)
+                }
             }
+
         }
         binding.num5.setOnClickListener {
             if (pickNumberSet.size >= 5){
                 Toast.makeText(context, "제외수는 5개까지만 선택할 수 있습니다.", Toast.LENGTH_SHORT).show()
-            }
-            if (pickNumberSet.contains(5)){
-                pickNumberSet.remove(5)
-                binding.num5.setBackgroundResource(R.drawable.button_custom)
+                if (pickNumberSet.contains(5)) {
+                    pickNumberSet.remove(5)
+                    binding.num5.setBackgroundResource(R.drawable.button_custom)
+                }else{
+                    return@setOnClickListener
+                }
             }else{
-                pickNumberSet.add(5)
-                binding.num5.setBackgroundResource(R.drawable.circle_blue)
+                if (pickNumberSet.contains(5)){
+                    pickNumberSet.remove(5)
+                    binding.num5.setBackgroundResource(R.drawable.button_custom)
+                }else{
+                    pickNumberSet.add(5)
+                    binding.num5.setBackgroundResource(R.drawable.circle_blue)
+                }
             }
+
         }
         binding.num6.setOnClickListener {
             if (pickNumberSet.size >= 5){
