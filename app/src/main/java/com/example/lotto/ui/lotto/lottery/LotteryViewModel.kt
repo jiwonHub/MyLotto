@@ -10,7 +10,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.lotto.R
-import com.example.lotto.ui.lotto.DialogCustom
+import com.example.lotto.ui.lotto.DialogExcept
 import com.example.lotto.ui.lotto.DialogFix
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
@@ -67,9 +67,9 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         textView.isVisible = true
     }
     fun dialogShowExcept(context: Context){
-        val dialog = DialogCustom(context)
+        val dialog = DialogExcept(context)
         dialog.showDia()
-        dialog.setOnClickListener(object : DialogCustom.ButtonClickListener{
+        dialog.setOnClickListener(object : DialogExcept.ButtonClickListener{
             override fun onClicked(text: MutableList<Int>) {
                 _exceptNumber.value = text
                 excep = text

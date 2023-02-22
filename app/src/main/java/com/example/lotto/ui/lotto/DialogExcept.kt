@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import com.example.lotto.R
 import com.example.lotto.databinding.DialogCustomBinding
 
-class DialogCustom(
+class DialogExcept(
     context: Context,
 ) {
     private val dialog = Dialog(context)
