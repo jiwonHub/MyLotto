@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.lotto.databinding.FragmentLotteryBinding
-import com.example.lotto.ui.lotto.DialogFix
 
 class LotteryFragment : Fragment() {
 
@@ -33,25 +32,23 @@ class LotteryFragment : Fragment() {
 
         //제외 수 클릭
         binding.delNum.setOnClickListener {
-            lottoViewModel.dialogShow(requireContext())
+            lottoViewModel.dialogShowExcept(requireContext())
         }
         // 고정 수 클릭
         binding.fixNum.setOnClickListener {
-            val dialog = DialogFix(requireContext())
-            dialog.showDia()
-            dialog.setOnClickListener(object : DialogFix.ButtonClickListener{
-                override fun onClicked(text: String) {
-                    binding.textView6.text = text
-                }
-            })
+            lottoViewModel.dialogShowFix(requireContext())
         }
 
         //추첨 번호 클릭시
         binding.start.setOnClickListener {
             lottoViewModel.updateText()
         }
-        lottoViewModel.lottoNumber6.observe(viewLifecycleOwner) {
+        //제외수
+        lottoViewModel.exceptNumber.observe(viewLifecycleOwner) {
             binding.textView5.text = it.toString()
+        }
+        lottoViewModel.fixNumber.observe(viewLifecycleOwner){
+            binding.textView6.text = it.toString()
         }
 
         lottoViewModel.lottoNumber1.observe(viewLifecycleOwner, Observer {

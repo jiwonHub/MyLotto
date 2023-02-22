@@ -11,6 +11,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.lotto.R
 import com.example.lotto.ui.lotto.DialogCustom
+import com.example.lotto.ui.lotto.DialogFix
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
     @SuppressLint("StaticFieldLeak")
@@ -31,9 +32,14 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val _lottoNumber5 = MutableLiveData<List<Int>?>()
     val lottoNumber5: LiveData<List<Int>?>
         get() = _lottoNumber5
-    private val _lottoNumber6 = MutableLiveData<List<Int>?>()
-    val lottoNumber6: LiveData<List<Int>?>
-        get() = _lottoNumber6
+    //고정수
+    private val _fixNumber = MutableLiveData<HashSet<Int>?>()
+    val fixNumber: LiveData<HashSet<Int>?>
+        get() = _fixNumber
+    //제외수
+    private val _exceptNumber = MutableLiveData<List<Int>?>()
+    val exceptNumber: LiveData<List<Int>?>
+        get() = _exceptNumber
 
 
 
@@ -57,12 +63,22 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
         textView.isVisible = true
     }
-    fun dialogShow(context: Context){
+    fun dialogShowExcept(context: Context){
         val dialog = DialogCustom(context)
         dialog.showDia()
         dialog.setOnClickListener(object : DialogCustom.ButtonClickListener{
             override fun onClicked(text: MutableList<Int>) {
-                _lottoNumber6.value = text
+                _exceptNumber.value = text
+            }
+
+        })
+    }
+    fun dialogShowFix(context: Context){
+        val dialog = DialogFix(context)
+        dialog.showDia()
+        dialog.setOnClickListener(object : DialogFix.ButtonClickListener{
+            override fun onClicked(text: HashSet<Int>) {
+                _fixNumber.value = text
             }
 
         })

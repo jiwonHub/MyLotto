@@ -24,7 +24,7 @@ class DialogFix(
         buttonClickEvent()
 
         binding.savebutton.setOnClickListener {
-            onClickListener.onClicked(pickNumberSet.toString())
+            onClickListener.onClicked(pickNumberSet)
             dialog.dismiss()
         }
 
@@ -119,11 +119,11 @@ class DialogFix(
     }
 
     interface ButtonClickListener{
-        fun onClicked(text: String)
+        fun onClicked(text: HashSet<Int>)
     }
     private lateinit var onClickListener: ButtonClickListener
 
-    fun setOnClickListener(listener: ButtonClickListener){
+    fun setOnClickListener(listener: DialogFix.ButtonClickListener){
         onClickListener = listener
     }
 
