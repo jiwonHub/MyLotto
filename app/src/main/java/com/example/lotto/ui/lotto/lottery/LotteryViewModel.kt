@@ -37,12 +37,12 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     val fixNumber: LiveData<HashSet<Int>?>
         get() = _fixNumber
     //제외수
-    private val _exceptNumber = MutableLiveData<List<Int>?>()
-    val exceptNumber: LiveData<List<Int>?>
+    private val _exceptNumber = MutableLiveData<HashSet<Int>?>()
+    val exceptNumber: LiveData<HashSet<Int>?>
         get() = _exceptNumber
 
     //고정수
-    var excep : MutableList<Int> = mutableListOf()
+    var excep : HashSet<Int> = HashSet()
     //제외수
     var fix : HashSet<Int> = HashSet()
 
@@ -70,11 +70,10 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         val dialog = DialogExcept(context)
         dialog.showDia()
         dialog.setOnClickListener(object : DialogExcept.ButtonClickListener{
-            override fun onClicked(text: MutableList<Int>) {
+            override fun onClicked(text: HashSet<Int>) {
                 _exceptNumber.value = text
                 excep = text
             }
-
         })
     }
     fun dialogShowFix(context: Context){
