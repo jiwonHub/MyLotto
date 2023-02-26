@@ -13,4 +13,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_lotto_main">LottoMainActivity</string>
+    <string name="pension_title">연금복권 번호 추첨기</string>
+    <string name="pension_subtitle">연금복권720+</string>
 </resources>

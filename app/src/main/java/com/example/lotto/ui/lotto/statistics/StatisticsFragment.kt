@@ -48,7 +48,7 @@ class StatisticsFragment : Fragment() {
                 number.add(doc.select("table#printTarget").select("tbody").select("tr")[i].select("td")[2].ownText())
             }
             withContext(Dispatchers.Main) {
-                //리사이 클러뷰
+                //리사이클러뷰
                 val listAdapter = RecycleAdapter(number)
                 binding.Recycler.layoutManager = LinearLayoutManager(requireContext(),
                     LinearLayoutManager.VERTICAL,false)
@@ -56,9 +56,6 @@ class StatisticsFragment : Fragment() {
                 listAdapter.notifyDataSetChanged()
             }
         }
-
-
-
 
         return binding.root
     }

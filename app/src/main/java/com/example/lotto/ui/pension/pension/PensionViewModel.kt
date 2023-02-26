@@ -1,4 +1,4 @@
-package com.example.lotto.ui.pension
+package com.example.lotto.ui.pension.pension
 
 import android.annotation.SuppressLint
 import android.app.Application
