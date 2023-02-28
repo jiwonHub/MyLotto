@@ -1,5 +1,6 @@
 package com.example.lotto.ui.lotto.statistics
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lotto.R
 
-class RecycleAdapter(private val itemList: MutableList<String>): RecyclerView.Adapter<RecycleAdapter.ViewHolder>() {
+class RecycleAdapter(private val itemList: ArrayList<String>): RecyclerView.Adapter<RecycleAdapter.ViewHolder>() {
     // (1) 아이템 레이아웃과 결합
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycler, parent, false)
@@ -18,6 +19,7 @@ class RecycleAdapter(private val itemList: MutableList<String>): RecyclerView.Ad
         return itemList.size
     }
     // (3) View에 내용 입력
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = (position+1).toString() + "번"
         holder.count.text = itemList[position] + "회"

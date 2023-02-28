@@ -8,12 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lotto.databinding.FragmentStatisticsBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import org.jsoup.Jsoup
 
 
@@ -34,36 +30,40 @@ class StatisticsFragment : Fragment() {
         val lottoViewModel =
             ViewModelProvider(this)[DashboardViewModel::class.java]
 
-        val number : MutableList<String> = mutableListOf()
-
+        val number: ArrayList<String> = ArrayList()
         lottoViewModel.updateText()
 
         lottoViewModel.lottoNumber1.observe(viewLifecycleOwner, Observer {
             binding.PastLottoNumber.text = it
         })
+
         CoroutineScope(Dispatchers.IO).launch {
             val url = "https://www.dhlottery.co.kr/gameResult.do?method=statByNumber"
             val doc = Jsoup.connect(url).get()
-            for (i in 0..44){
-                number.add(doc.select("table#printTarget").select("tbody").select("tr")[i].select("td")[2].ownText())
+            for (i in 0..44) {
+                number.add(
+                    doc.select("table#printTarget").select("tbody")
+                        .select("tr")[i].select("td")[2].ownText()
+                )
             }
-            withContext(Dispatchers.Main) {
-                //리사이클러뷰
-                val listAdapter = RecycleAdapter(number)
-                binding.Recycler.layoutManager = LinearLayoutManager(requireContext(),
-                    LinearLayoutManager.VERTICAL,false)
-                binding.Recycler.adapter = listAdapter
-                listAdapter.notifyDataSetChanged()
-            }
+
+        withContext(Dispatchers.Main) {
+            //리사이클러뷰
+            val listAdapter = RecycleAdapter(number)
+            binding.Recycler.adapter = listAdapter
         }
-
-        return binding.root
+        cancel()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
+
+    return binding.root
+}
+
+override fun onDestroyView() {
+    super.onDestroyView()
+    _binding = null
+}
 }
 
 

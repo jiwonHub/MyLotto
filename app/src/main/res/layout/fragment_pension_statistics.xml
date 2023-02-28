@@ -20,7 +20,6 @@
                     android:layout_height="wrap_content"
                     android:text="번호별 통계"
                     android:textAlignment="center" />
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -47,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    >
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -97,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    >
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -149,7 +148,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    >
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="wrap_content"

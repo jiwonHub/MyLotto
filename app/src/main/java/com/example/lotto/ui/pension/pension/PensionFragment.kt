@@ -1,5 +1,6 @@
 package com.example.lotto.ui.pension.pension
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ class PensionFragment: Fragment() {
     private val binding get() = _binding!!
     private lateinit var pensionViewModel: PensionViewModel
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,7 +32,7 @@ class PensionFragment: Fragment() {
 
         pensionViewModel.lottoNumber1.observe(viewLifecycleOwner) {
             it?.let {
-                binding.lottoNumber1.text = it[0].toString()
+                binding.lottoNumber1.text = it[0].toString() + "조"
                 binding.lottoNumber2.text = it[1].toString()
                 binding.lottoNumber3.text = it[2].toString()
                 binding.lottoNumber4.text = it[3].toString()
@@ -41,7 +43,7 @@ class PensionFragment: Fragment() {
         }
         pensionViewModel.lottoNumber2.observe(viewLifecycleOwner) {
             it?.let {
-                binding.lottoNumber8.text = it[0].toString()
+                binding.lottoNumber8.text = it[0].toString() + "조"
                 binding.lottoNumber9.text = it[1].toString()
                 binding.lottoNumber10.text = it[2].toString()
                 binding.lottoNumber11.text = it[3].toString()
@@ -52,7 +54,7 @@ class PensionFragment: Fragment() {
         }
         pensionViewModel.lottoNumber3.observe(viewLifecycleOwner) {
             it?.let {
-                binding.lottoNumber15.text = it[0].toString()
+                binding.lottoNumber15.text = it[0].toString()+ "조"
                 binding.lottoNumber16.text = it[1].toString()
                 binding.lottoNumber17.text = it[2].toString()
                 binding.lottoNumber18.text = it[3].toString()
@@ -63,7 +65,7 @@ class PensionFragment: Fragment() {
         }
         pensionViewModel.lottoNumber4.observe(viewLifecycleOwner) {
             it?.let {
-                binding.lottoNumber22.text = it[0].toString()
+                binding.lottoNumber22.text = it[0].toString()+ "조"
                 binding.lottoNumber23.text = it[1].toString()
                 binding.lottoNumber24.text = it[2].toString()
                 binding.lottoNumber25.text = it[3].toString()
@@ -74,7 +76,7 @@ class PensionFragment: Fragment() {
         }
         pensionViewModel.lottoNumber5.observe(viewLifecycleOwner) {
             it?.let {
-                binding.lottoNumber29.text = it[0].toString()
+                binding.lottoNumber29.text = it[0].toString()+ "조"
                 binding.lottoNumber30.text = it[1].toString()
                 binding.lottoNumber31.text = it[2].toString()
                 binding.lottoNumber32.text = it[3].toString()

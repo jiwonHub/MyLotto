@@ -2,18 +2,13 @@ package com.example.lotto.ui.pension.pension
 
 import android.annotation.SuppressLint
 import android.app.Application
-import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.lotto.R
 
 class PensionViewModel(application: Application) : AndroidViewModel(application) {
 
     @SuppressLint("StaticFieldLeak")
-    private val context = getApplication<Application>().applicationContext
-
     private val _lottoNumber1 = MutableLiveData<List<Int>?>()
     val lottoNumber1: LiveData<List<Int>?>
         get() = _lottoNumber1
