@@ -9,7 +9,7 @@ import com.example.lotto.R
 
 class RecycleAdapter(private val itemList: MutableList<String>): RecyclerView.Adapter<RecycleAdapter.ViewHolder>() {
     // (1) 아이템 레이아웃과 결합
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecycleAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycler, parent, false)
         return ViewHolder(view)
     }
@@ -18,7 +18,7 @@ class RecycleAdapter(private val itemList: MutableList<String>): RecyclerView.Ad
         return itemList.size
     }
     // (3) View에 내용 입력
-    override fun onBindViewHolder(holder: RecycleAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = (position+1).toString() + "번"
         holder.count.text = itemList[position] + "회"
     }

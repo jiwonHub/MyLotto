@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_pension"
+        android:title="번호 추첨"
+        android:icon="@drawable/lotto"/>
+
+    <item
+        android:id="@+id/navigation_statistics"
+        android:title="번호 통계"
+        android:icon="@drawable/statistics"/>
+</menu>

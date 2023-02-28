@@ -8,20 +8,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.lotto.R
 import com.example.lotto.databinding.FragmentPensionStatisticsBinding
-import com.example.lotto.ui.lotto.statistics.DashboardViewModel
-import com.example.lotto.ui.pension.pension.PensionViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
 
-class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) {
+class PensionStatisticsFragment: Fragment() {
 
-    private lateinit var binding: FragmentPensionStatisticsBinding
+    private  var _binding: FragmentPensionStatisticsBinding? = null
+    private val binding get() = _binding!!
 
     @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
     override fun onCreateView(
@@ -29,7 +26,7 @@ class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) 
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentPensionStatisticsBinding.inflate(layoutInflater)
+        _binding = FragmentPensionStatisticsBinding.inflate(inflater,container,false)
 
         val pensionStatisticsViewModel = ViewModelProvider(this)[PensionStatisticsViewModel::class.java]
 
@@ -71,7 +68,7 @@ class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) 
             val number : MutableList<String> = mutableListOf()
             val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
             val doc = Jsoup.connect(url).get()
-            for(i in 0..8){
+            for(i in 0..9){
                 number.add(doc.select("table#printTarget")[1].select("tbody").select("tr")[i].select("td")[2].ownText())
             }
             withContext(Dispatchers.Main){
@@ -86,7 +83,7 @@ class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) 
             val number : MutableList<String> = mutableListOf()
             val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
             val doc = Jsoup.connect(url).get()
-            for(i in 0..8){
+            for(i in 0..9){
                 number.add(doc.select("table#printTarget")[2].select("tbody").select("tr")[i].select("td")[2].ownText())
             }
             withContext(Dispatchers.Main){
@@ -101,7 +98,7 @@ class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) 
             val number : MutableList<String> = mutableListOf()
             val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
             val doc = Jsoup.connect(url).get()
-            for(i in 0..8){
+            for(i in 0..9){
                 number.add(doc.select("table#printTarget")[3].select("tbody").select("tr")[i].select("td")[2].ownText())
             }
             withContext(Dispatchers.Main){
@@ -116,7 +113,7 @@ class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) 
             val number : MutableList<String> = mutableListOf()
             val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
             val doc = Jsoup.connect(url).get()
-            for(i in 0..8){
+            for(i in 0..9){
                 number.add(doc.select("table#printTarget")[4].select("tbody").select("tr")[i].select("td")[2].ownText())
             }
             withContext(Dispatchers.Main){
@@ -131,7 +128,7 @@ class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) 
             val number : MutableList<String> = mutableListOf()
             val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
             val doc = Jsoup.connect(url).get()
-            for(i in 0..8){
+            for(i in 0..9){
                 number.add(doc.select("table#printTarget")[5].select("tbody").select("tr")[i].select("td")[2].ownText())
             }
             withContext(Dispatchers.Main){
@@ -146,7 +143,7 @@ class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) 
             val number : MutableList<String> = mutableListOf()
             val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
             val doc = Jsoup.connect(url).get()
-            for(i in 0..8){
+            for(i in 0..9){
                 number.add(doc.select("table#printTarget")[6].select("tbody").select("tr")[i].select("td")[2].ownText())
             }
             withContext(Dispatchers.Main){
@@ -158,5 +155,9 @@ class PensionStatisticsFragment: Fragment(R.layout.fragment_pension_statistics) 
             }
         }
         return binding.root
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
