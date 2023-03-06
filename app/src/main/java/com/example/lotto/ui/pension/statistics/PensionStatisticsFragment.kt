@@ -30,24 +30,36 @@ class PensionStatisticsFragment: Fragment() {
 
         val pensionStatisticsViewModel = ViewModelProvider(this)[PensionStatisticsViewModel::class.java]
 
-        /*CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch {
             val number : MutableList<String> = mutableListOf()
-            val jo : MutableList<String> = mutableListOf()
+            val jo : String
             val url = "https://dhlottery.co.kr/gameResult.do?method=win720"
             val doc = Jsoup.connect(url).get()
 
-            *//*jo.add(doc.select("div#article").select("div")[1].select("div").select("div")[1]
-                .select("div")[0].select("div").select("div").select("span").select("span").toString())*//*
+            jo = (doc.select("div.win_num_wrap")[0].select("div.win720_num").select("div.group").select("span.num.large").select("span")[1].ownText())
 
-            for (i in 0..6){
-                number.add(doc.select("div#article").select("div")[1].select("div").select("div")[1]
-                    .select("div")[0].select("div").select("span")[i].ownText())
+            for (i in 1..6){
+                number.add(doc.select("div.win_num_wrap")[0].select("div.win720_num").select("span.num.al720_color$i.large").select("span")[1].ownText())
             }
             withContext(Dispatchers.Main){
-                *//*binding.PastLPensionNumber.text = "$jo + 조"*//*
-                binding.BonusPension.text = number.toString()
+                binding.PastLPensionNumber.text =  "$jo 조"
+                binding.PastLPensionNumber2.text = number.toString()
             }
-        }*/
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val number : MutableList<String> = mutableListOf()
+            val url = "https://dhlottery.co.kr/gameResult.do?method=win720"
+            val doc = Jsoup.connect(url).get()
+
+            for(i in 1..6){
+                number.add(doc.select("div.win_num_wrap")[1].select("div.win720_num").select("span.num.al720_color$i.large").select("span")[1].ownText())
+            }
+
+            withContext(Dispatchers.Main){
+                binding.BonusNumber.text = number.toString()
+            }
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             val number : MutableList<String> = mutableListOf()
