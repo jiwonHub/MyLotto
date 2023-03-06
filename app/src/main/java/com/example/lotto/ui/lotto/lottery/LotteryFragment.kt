@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -32,10 +33,12 @@ class LotteryFragment : Fragment() {
         //제외 수 클릭
         binding.delNum.setOnClickListener {
             lottoViewModel.dialogShowExcept(requireContext())
+            binding.textView5.isVisible = true
         }
         // 고정 수 클릭
         binding.fixNum.setOnClickListener {
             lottoViewModel.dialogShowFix(requireContext())
+            binding.textView6.isVisible = true
         }
 
         //추첨 번호 클릭시

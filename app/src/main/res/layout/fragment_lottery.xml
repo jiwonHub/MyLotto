@@ -10,11 +10,12 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/neo"
         android:text="@string/로또번호추첨기"
         android:textAlignment="center"
         android:textColor="#3a350e"
-        android:textSize="34sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +38,9 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
             android:text="Lotto 6/45"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -79,6 +82,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/gwangyang"
+
             android:text="번호를 추첨해주세요!"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,8 +92,10 @@
         <Button
             android:id="@+id/delNum"
             android:layout_width="70dp"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/gwangyang"
             android:text="제외수"
             android:textColor="@color/textColor"
             android:textSize="10sp"
@@ -98,13 +105,15 @@
         <Button
             android:id="@+id/fixNum"
             android:layout_width="70dp"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/gwangyang"
             android:text="고정수"
             android:textColor="@color/textColor"
             android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/delNum" />
+            app:layout_constraintBottom_toTopOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -185,7 +194,6 @@
                     android:layout_marginEnd="3dp"
                     android:background="@drawable/circle_default"
                     android:gravity="center"
-                    android:text=" "
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -660,6 +668,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="제외수"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/delNum"
             app:layout_constraintStart_toEndOf="@+id/delNum"
             app:layout_constraintTop_toTopOf="@+id/delNum" />
@@ -668,11 +677,12 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/fixNum"
+            android:layout_marginStart="5dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@id/fixNum"
             app:layout_constraintStart_toEndOf="@id/fixNum"
-            android:layout_marginStart="5dp"
-            tools:text="고정수"/>
+            app:layout_constraintTop_toTopOf="@id/fixNum"
+            tools:text="고정수" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -683,6 +693,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
+        android:fontFamily="@font/gwangyang"
         android:text="@string/번호추첨"
         android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"

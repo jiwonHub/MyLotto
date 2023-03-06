@@ -48,6 +48,6 @@ class PensionViewModel(application: Application) : AndroidViewModel(application)
     }
 //난수 발생 함수
 private fun randomGroup(): Int {
-    return (0..5).random()
+    return (1..5).random()
 }
 
