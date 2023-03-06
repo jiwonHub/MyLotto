@@ -17,8 +17,14 @@ class PensionRecyclerViewAdapter(private val itemList: MutableList<String>) :Rec
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: PensionRecyclerViewAdapter.ViewHolder, position: Int) {
-        holder.name.text = (position).toString() + "번"
-        holder.count.text = itemList[position] + "회"
+        if (itemList.size == 5){
+            holder.name.text = (position+1).toString() + "조"
+            holder.count.text = itemList[position] + "회"
+        }else{
+            holder.name.text = (position).toString() + "번"
+            holder.count.text = itemList[position] + "회"
+        }
+
     }
 
     override fun getItemCount(): Int {
