@@ -6,13 +6,13 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.Toast
 import com.example.lotto.R
-import com.example.lotto.databinding.DialogCustomBinding
+import com.example.lotto.databinding.DialogCustomFixBinding
 
 class DialogFix(
     private val context: Context,
 ) {
     private val dialog = Dialog(context)
-    private val binding : DialogCustomBinding = DialogCustomBinding.inflate(dialog.layoutInflater)
+    private val binding : DialogCustomFixBinding = DialogCustomFixBinding.inflate(dialog.layoutInflater)
     private val pickNumberSet = hashSetOf<Int>()
 
     fun showDia(){
