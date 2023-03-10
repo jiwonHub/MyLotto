@@ -663,26 +663,157 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/exnum0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="제외수"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/gwangyang"
+            android:textSize="14sp"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/delNum"
             app:layout_constraintStart_toEndOf="@+id/delNum"
             app:layout_constraintTop_toTopOf="@+id/delNum" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/exnum1"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:layout_marginStart="3dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/delNum"
+            app:layout_constraintStart_toEndOf="@+id/exnum0"
+            app:layout_constraintTop_toTopOf="@+id/delNum"
+            app:layout_constraintVertical_bias="0.518" />
+
+        <TextView
+            android:id="@+id/exnum2"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/delNum"
+            app:layout_constraintStart_toEndOf="@+id/exnum1"
+            app:layout_constraintTop_toTopOf="@+id/delNum"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintVertical_bias="0.518" />
+
+        <TextView
+            android:id="@+id/exnum3"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:layout_marginStart="3dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/delNum"
+            app:layout_constraintStart_toEndOf="@+id/exnum2"
+            app:layout_constraintTop_toTopOf="@+id/delNum"
+            app:layout_constraintVertical_bias="0.518" />
+
+        <TextView
+            android:id="@+id/exnum4"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:layout_marginStart="3dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/delNum"
+            app:layout_constraintStart_toEndOf="@+id/exnum3"
+            app:layout_constraintTop_toTopOf="@+id/delNum"
+            app:layout_constraintVertical_bias="0.518" />
+
+        <TextView
+            android:id="@+id/fixNum0"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
             android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:textSize="14sp"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@id/fixNum"
             app:layout_constraintStart_toEndOf="@id/fixNum"
             app:layout_constraintTop_toTopOf="@id/fixNum"
-            tools:text="고정수" />
+           />
+
+        <TextView
+            android:id="@+id/fixNum1"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:layout_marginStart="3dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/fixNum"
+            app:layout_constraintStart_toEndOf="@+id/fixNum0"
+            app:layout_constraintTop_toTopOf="@id/fixNum"
+            app:layout_constraintVertical_bias="0.481"
+            />
+
+        <TextView
+            android:id="@+id/fixNum2"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:layout_marginStart="3dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/fixNum"
+            app:layout_constraintStart_toEndOf="@+id/fixNum1"
+            app:layout_constraintTop_toTopOf="@id/fixNum"
+            app:layout_constraintVertical_bias="0.481"
+            />
+
+        <TextView
+            android:id="@+id/fixNum3"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:layout_marginStart="3dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/fixNum"
+            app:layout_constraintStart_toEndOf="@+id/fixNum2"
+            app:layout_constraintTop_toTopOf="@id/fixNum"
+            app:layout_constraintVertical_bias="0.481"
+             />
+
+        <TextView
+            android:id="@+id/fixNum4"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:layout_marginStart="3dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/fixNum"
+            app:layout_constraintStart_toEndOf="@+id/fixNum3"
+            app:layout_constraintTop_toTopOf="@id/fixNum"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintVertical_bias="0.481"
+             />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

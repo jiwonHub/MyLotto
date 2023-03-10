@@ -30,15 +30,13 @@ class LotteryFragment : Fragment() {
 
         _binding = FragmentLotteryBinding.inflate(inflater, container, false)
 
-        //제외 수 클릭
+        //제외 수 버튼 클릭
         binding.delNum.setOnClickListener {
             lottoViewModel.dialogShowExcept(requireContext())
-            binding.textView5.isVisible = true
         }
-        // 고정 수 클릭
+        // 고정 수 버튼 클릭
         binding.fixNum.setOnClickListener {
             lottoViewModel.dialogShowFix(requireContext())
-            binding.textView6.isVisible = true
         }
 
         //추첨 번호 클릭시
@@ -47,10 +45,75 @@ class LotteryFragment : Fragment() {
         }
         //제외수
         lottoViewModel.exceptNumber.observe(viewLifecycleOwner) {
-            binding.textView5.text = it.toString()
+            binding.exnum0.isVisible = false
+            binding.exnum1.isVisible = false
+            binding.exnum2.isVisible = false
+            binding.exnum3.isVisible = false
+            binding.exnum4.isVisible = false
+            if (it != null) {
+                when (it.size) {
+                    1 -> lottoViewModel.setExcepNumberBackGround(it[0], binding.exnum0)
+                    2 -> {
+                        lottoViewModel.setExcepNumberBackGround(it[0], binding.exnum0)
+                        lottoViewModel.setExcepNumberBackGround(it[1], binding.exnum1)
+                    }
+                    3 -> {
+                        lottoViewModel.setExcepNumberBackGround(it[0], binding.exnum0)
+                        lottoViewModel.setExcepNumberBackGround(it[1], binding.exnum1)
+                        lottoViewModel.setExcepNumberBackGround(it[2], binding.exnum2)
+                    }
+                    4 -> {
+                        lottoViewModel.setExcepNumberBackGround(it[0], binding.exnum0)
+                        lottoViewModel.setExcepNumberBackGround(it[1], binding.exnum1)
+                        lottoViewModel.setExcepNumberBackGround(it[2], binding.exnum2)
+                        lottoViewModel.setExcepNumberBackGround(it[3], binding.exnum3)
+                    }
+                    5 -> {
+                        lottoViewModel.setExcepNumberBackGround(it[0], binding.exnum0)
+                        lottoViewModel.setExcepNumberBackGround(it[1], binding.exnum1)
+                        lottoViewModel.setExcepNumberBackGround(it[2], binding.exnum2)
+                        lottoViewModel.setExcepNumberBackGround(it[3], binding.exnum3)
+                        lottoViewModel.setExcepNumberBackGround(it[4], binding.exnum4)
+                    }
+                }
+            }
+
         }
-        lottoViewModel.fixNumber.observe(viewLifecycleOwner){
-            binding.textView6.text = it.toString()
+
+        //고정수
+        lottoViewModel.fixNumber.observe(viewLifecycleOwner) {
+            binding.fixNum0.isVisible = false
+            binding.fixNum1.isVisible = false
+            binding.fixNum2.isVisible = false
+            binding.fixNum3.isVisible = false
+            binding.fixNum4.isVisible = false
+            if (it != null) {
+                when (it.size) {
+                    1 -> lottoViewModel.setFixNumberBackGround(it[0], binding.fixNum0)
+                    2 -> {
+                        lottoViewModel.setFixNumberBackGround(it[0], binding.fixNum0)
+                        lottoViewModel.setFixNumberBackGround(it[1], binding.fixNum1)
+                    }
+                    3 -> {
+                        lottoViewModel.setFixNumberBackGround(it[0], binding.fixNum0)
+                        lottoViewModel.setFixNumberBackGround(it[1], binding.fixNum1)
+                        lottoViewModel.setFixNumberBackGround(it[2], binding.fixNum2)
+                    }
+                    4 -> {
+                        lottoViewModel.setFixNumberBackGround(it[0], binding.fixNum0)
+                        lottoViewModel.setFixNumberBackGround(it[1], binding.fixNum1)
+                        lottoViewModel.setFixNumberBackGround(it[2], binding.fixNum2)
+                        lottoViewModel.setFixNumberBackGround(it[3], binding.fixNum3)
+                    }
+                    5 -> {
+                        lottoViewModel.setFixNumberBackGround(it[0], binding.fixNum0)
+                        lottoViewModel.setFixNumberBackGround(it[1], binding.fixNum1)
+                        lottoViewModel.setFixNumberBackGround(it[2], binding.fixNum2)
+                        lottoViewModel.setFixNumberBackGround(it[3], binding.fixNum3)
+                        lottoViewModel.setFixNumberBackGround(it[4], binding.fixNum4)
+                    }
+                }
+            }
         }
 
         lottoViewModel.lottoNumber1.observe(viewLifecycleOwner, Observer {

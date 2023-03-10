@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -32,32 +33,17 @@ class StatisticsFragment : Fragment() {
 
 
         lottoViewModel.lottoNumber1.observe(viewLifecycleOwner, Observer {
-            binding.PastLottoNumber.text = it
+            lottoViewModel.setNumberBackGround(it[0].toInt(),binding.pastNum1)
+            lottoViewModel.setNumberBackGround(it[1].toInt(),binding.pastNum2)
+            lottoViewModel.setNumberBackGround(it[2].toInt(),binding.pastNum3)
+            lottoViewModel.setNumberBackGround(it[3].toInt(),binding.pastNum4)
+            lottoViewModel.setNumberBackGround(it[4].toInt(),binding.pastNum5)
+            lottoViewModel.setNumberBackGround(it[5].toInt(),binding.pastNum6)
+            binding.oper.isVisible = true
         })
         lottoViewModel.num.observe(viewLifecycleOwner) {
             binding.Recycler.adapter = RecycleAdapter(it)
         }
-
-
-
-//        CoroutineScope(Dispatchers.IO).launch {
-//            val url = "https://www.dhlottery.co.kr/gameResult.do?method=statByNumber"
-//            val doc = Jsoup.connect(url).get()
-//            for (i in 0..44) {
-//                number.add(
-//                    doc.select("table#printTarget").select("tbody")
-//                        .select("tr")[i].select("td")[2].ownText()
-//                )
-//            }
-//
-//        withContext(Dispatchers.Main) {
-//            //리사이클러뷰
-//            listAdapter = RecycleAdapter(number)
-//            binding.Recycler.adapter = listAdapter
-//        }
-//    }
-
-
 
     return binding.root
 }

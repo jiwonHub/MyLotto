@@ -33,18 +33,18 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     val lottoNumber5: LiveData<List<Int>?>
         get() = _lottoNumber5
     //고정수
-    private val _fixNumber = MutableLiveData<HashSet<Int>?>()
-    val fixNumber: LiveData<HashSet<Int>?>
+    private val _fixNumber = MutableLiveData<List<Int>?>()
+    val fixNumber: LiveData<List<Int>?>
         get() = _fixNumber
     //제외수
-    private val _exceptNumber = MutableLiveData<HashSet<Int>?>()
-    val exceptNumber: LiveData<HashSet<Int>?>
+    private val _exceptNumber = MutableLiveData<List<Int>?>()
+    val exceptNumber: LiveData<List<Int>?>
         get() = _exceptNumber
 
     //고정수
-    var excep : HashSet<Int> = HashSet()
+    var excep : MutableList<Int> = mutableListOf()
     //제외수
-    var fix : HashSet<Int> = HashSet()
+    var fix : MutableList<Int> = mutableListOf()
 
     //TextView 업데이트
     fun updateText(){
@@ -66,12 +66,26 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
         textView.isVisible = true
     }
+
+    //제외수 백그라운드 설정
+    fun setExcepNumberBackGround(number: Int, textView: TextView){
+            textView.text = number.toString()
+            textView.background = ContextCompat.getDrawable(context, R.drawable.circle_deepred)
+            textView.isVisible = true
+    }
+    //고정수 백그라운드 설정
+    fun setFixNumberBackGround(number: Int, textView: TextView){
+        textView.text = number.toString()
+        textView.background = ContextCompat.getDrawable(context, R.drawable.circle_deepblue)
+        textView.isVisible = true
+    }
+
     fun dialogShowExcept(context: Context){
         val dialog = DialogExcept(context)
         dialog.showDia()
         dialog.setOnClickListener(object : DialogExcept.ButtonClickListener{
-            override fun onClicked(text: HashSet<Int>) {
-                _exceptNumber.value = text
+            override fun onClicked(text: MutableList<Int>) {
+                _exceptNumber.value = text.sorted()
                 excep = text
             }
         })
@@ -80,8 +94,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         val dialog = DialogFix(context)
         dialog.showDia()
         dialog.setOnClickListener(object : DialogFix.ButtonClickListener{
-            override fun onClicked(text: HashSet<Int>) {
-                _fixNumber.value = text
+            override fun onClicked(text: MutableList<Int>) {
+                _fixNumber.value = text.sorted()
                 fix = text
             }
         })
