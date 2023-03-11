@@ -31,7 +31,6 @@ class StatisticsFragment : Fragment() {
 
         lottoViewModel.updateText()
 
-
         lottoViewModel.lottoNumber1.observe(viewLifecycleOwner, Observer {
             lottoViewModel.setNumberBackGround(it[0].toInt(),binding.pastNum1)
             lottoViewModel.setNumberBackGround(it[1].toInt(),binding.pastNum2)
@@ -39,6 +38,7 @@ class StatisticsFragment : Fragment() {
             lottoViewModel.setNumberBackGround(it[3].toInt(),binding.pastNum4)
             lottoViewModel.setNumberBackGround(it[4].toInt(),binding.pastNum5)
             lottoViewModel.setNumberBackGround(it[5].toInt(),binding.pastNum6)
+            lottoViewModel.setNumberBackGround(it[6].toInt(),binding.pastNum7)
             binding.oper.isVisible = true
         })
         lottoViewModel.num.observe(viewLifecycleOwner) {

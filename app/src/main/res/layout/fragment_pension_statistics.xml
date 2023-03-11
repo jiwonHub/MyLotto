@@ -5,20 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.pension.statistics.PensionStatisticsFragment">
+
     <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#7ECDDC39"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#56CDDC39"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -29,6 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/gwangyang"
                 android:text="직전 회차 당첨 결과"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/gwangyang"
                 android:text="직전회차"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,215 +51,433 @@
                 android:id="@+id/PastLPensionNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toStartOf="@id/jo"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/PastLottoNumber" />
+
+            <TextView
+                android:id="@+id/jo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="조"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/PastLPensionNumber"
                 app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber2"
-                app:layout_constraintTop_toBottomOf="@id/PastLottoNumber"/>
+                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber"
+                app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
                 android:id="@+id/PastLPensionNumber2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/PastLPensionNumber"/>
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber3"
+                app:layout_constraintStart_toEndOf="@id/jo"
+                app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
-                android:id="@+id/BonusNumber"
+                android:id="@+id/PastLPensionNumber3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/PastLPensionNumber"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber4"
+                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber2"
+                app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
+
+            <TextView
+                android:id="@+id/PastLPensionNumber4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber5"
+                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber3"
+                app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
+
+            <TextView
+                android:id="@+id/PastLPensionNumber5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber6"
+                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber4"
+                app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
+
+            <TextView
+                android:id="@+id/PastLPensionNumber6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber7"
+                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber5"
+                app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
+
+            <TextView
+                android:id="@+id/PastLPensionNumber7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber6"
+                app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
+
+            <TextView
+                android:id="@+id/bonusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="23dp"
+                android:text="보너스"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/BonusNumber1"
+                app:layout_constraintEnd_toStartOf="@+id/BonusNumber1"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toTopOf="@id/BonusNumber1" />
+
+            <TextView
+                android:id="@+id/BonusNumber1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/BonusNumber2"
+                app:layout_constraintStart_toEndOf="@id/bonusTextView"
+                app:layout_constraintTop_toBottomOf="@id/PastLPensionNumber" />
+
+            <TextView
+                android:id="@+id/BonusNumber2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/BonusNumber3"
+                app:layout_constraintStart_toEndOf="@id/BonusNumber1"
+                app:layout_constraintTop_toTopOf="@id/BonusNumber1" />
+
+            <TextView
+                android:id="@+id/BonusNumber3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/BonusNumber4"
+                app:layout_constraintStart_toEndOf="@id/BonusNumber2"
+                app:layout_constraintTop_toTopOf="@id/BonusNumber1" />
+
+            <TextView
+                android:id="@+id/BonusNumber4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/BonusNumber5"
+                app:layout_constraintStart_toEndOf="@id/BonusNumber3"
+                app:layout_constraintTop_toTopOf="@id/BonusNumber1" />
+
+            <TextView
+                android:id="@+id/BonusNumber5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/BonusNumber6"
+                app:layout_constraintStart_toEndOf="@id/BonusNumber4"
+                app:layout_constraintTop_toTopOf="@id/BonusNumber1" />
+
+            <TextView
+                android:id="@+id/BonusNumber6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/BonusNumber5"
+                app:layout_constraintTop_toTopOf="@id/BonusNumber1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="번호별 통계"
-                    android:textAlignment="center" />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/black"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/black" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="조 단위"
-                    android:gravity="center"/>
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:text="단위별 당첨 통계"
+            android:textAlignment="center" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gwangyang"
+            android:gravity="center"
+            android:text="조 단위" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/black" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="5dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_recycler" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gwangyang"
+                    android:text="십만 단위" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/black"
-                    android:layout_marginTop="3dp"/>
-                <LinearLayout
+                    android:background="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:baselineAligned="false">
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recycler" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#7ECDDC39"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="십만 단위"
-                            android:layout_gravity="center"/>
+            </LinearLayout>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:listitem="@layout/item_recycler" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gwangyang"
+                    android:text="만 단위" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#7ECDDC39"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="만 단위"
-                            android:layout_gravity="center"/>
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:listitem="@layout/item_recycler" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:baselineAligned="false">
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recycler" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#7ECDDC39"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="천 단위"
-                            android:layout_gravity="center"/>
+            </LinearLayout>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:listitem="@layout/item_recycler" />
+        </LinearLayout>
 
-                    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#7ECDDC39"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="백 단위"
-                            android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gwangyang"
+                    android:text="천 단위" />
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView5"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:listitem="@layout/item_recycler" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
 
-                    </LinearLayout>
-
-
-
-                </LinearLayout>
-
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:baselineAligned="false">
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recycler" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#7ECDDC39"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="십 단위"
-                            android:layout_gravity="center"/>
+            </LinearLayout>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:listitem="@layout/item_recycler" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gwangyang"
+                    android:text="백 단위" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#7ECDDC39"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="일 단위"
-                            android:layout_gravity="center"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recycler" />
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView7"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:listitem="@layout/item_recycler" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
 
-                    </LinearLayout>
+            </LinearLayout>
 
-                </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gwangyang"
+                    android:text="십 단위" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recycler" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gwangyang"
+                    android:text="일 단위" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recycler" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
 
-
-
-    </androidx.core.widget.NestedScrollView>
+</androidx.core.widget.NestedScrollView>
 
