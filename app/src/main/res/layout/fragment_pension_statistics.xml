@@ -18,41 +18,30 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/PastLottoNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/gwangyang"
-                android:text="직전 회차 당첨 결과"
-                android:textAlignment="center"
+                android:text="직전회차 당첨결과"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/PastLottoNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/gwangyang"
-                android:text="직전회차"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <TextView
                 android:id="@+id/PastLPensionNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="5dp"
+                android:gravity="center"
                 app:layout_constraintEnd_toStartOf="@id/jo"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +52,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
+                android:fontFamily="@font/gwangyang"
                 android:text="조"
+                android:textSize="14sp"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/PastLPensionNumber"
                 app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber2"
@@ -135,7 +126,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="23dp"
-                android:text="보너스"
+                android:fontFamily="@font/gwangyang"
+                android:text="Bonus 모든 조"
+                android:textSize="14sp"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/BonusNumber1"
                 app:layout_constraintEnd_toStartOf="@+id/BonusNumber1"
@@ -207,9 +200,9 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1.5dp"
             android:layout_marginTop="5dp"
-            android:background="@color/black" />
+            android:background="@drawable/dash_line" />
 
         <TextView
             android:id="@+id/textView12"
@@ -217,7 +210,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/gwangyang"
             android:text="단위별 당첨 통계"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="20sp" />
 
         <View
             android:layout_width="match_parent"

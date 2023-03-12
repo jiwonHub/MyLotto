@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lotto.R
 
-class PensionRecyclerViewAdapter(private val itemList: ArrayList<String>, private val i : Int) :RecyclerView.Adapter<PensionRecyclerViewAdapter.ViewHolder>(){
+class PensionRecyclerViewAdapter(private val itemList: ArrayList<Int>, private val i : Int) :RecyclerView.Adapter<PensionRecyclerViewAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycler, parent, false)
@@ -18,11 +18,13 @@ class PensionRecyclerViewAdapter(private val itemList: ArrayList<String>, privat
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.progress.max = itemList.max()
         holder.name.text = (position).toString()
+        holder.progress.progress = itemList[position]
+        holder.count.text = itemList[position].toString() + "회"
         setNumberBackGround(position+1,holder.name, i)
-        holder.count.text = itemList[position] + "회"
-        holder.progress.max = itemList.max().toInt()
-        holder.progress.progress = itemList[position].toInt()
+
+
     }
 
     override fun getItemCount(): Int {

@@ -4,7 +4,6 @@ import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lotto.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,32 +24,32 @@ class PensionStatisticsViewModel(): ViewModel() {
     val pensionBonusNumber: LiveData<ArrayList<String>>
         get() = _pensionBonusNumber
 
-    private val _pensionRecyclerView1 = MutableLiveData<ArrayList<String>>()
-    val pensionRecyclerView1: LiveData<ArrayList<String>>
+    private val _pensionRecyclerView1 = MutableLiveData<ArrayList<Int>>()
+    val pensionRecyclerView1: LiveData<ArrayList<Int>>
         get() = _pensionRecyclerView1
 
-    private val _pensionRecyclerView2 = MutableLiveData<ArrayList<String>>()
-    val pensionRecyclerView2: LiveData<ArrayList<String>>
+    private val _pensionRecyclerView2 = MutableLiveData<ArrayList<Int>>()
+    val pensionRecyclerView2: LiveData<ArrayList<Int>>
         get() = _pensionRecyclerView2
 
-    private val _pensionRecyclerView3 = MutableLiveData<ArrayList<String>>()
-    val pensionRecyclerView3: LiveData<ArrayList<String>>
+    private val _pensionRecyclerView3 = MutableLiveData<ArrayList<Int>>()
+    val pensionRecyclerView3: LiveData<ArrayList<Int>>
         get() = _pensionRecyclerView3
 
-    private val _pensionRecyclerView4 = MutableLiveData<ArrayList<String>>()
-    val pensionRecyclerView4: LiveData<ArrayList<String>>
+    private val _pensionRecyclerView4 = MutableLiveData<ArrayList<Int>>()
+    val pensionRecyclerView4: LiveData<ArrayList<Int>>
         get() = _pensionRecyclerView4
 
-    private val _pensionRecyclerView5 = MutableLiveData<ArrayList<String>>()
-    val pensionRecyclerView5: LiveData<ArrayList<String>>
+    private val _pensionRecyclerView5 = MutableLiveData<ArrayList<Int>>()
+    val pensionRecyclerView5: LiveData<ArrayList<Int>>
         get() = _pensionRecyclerView5
 
-    private val _pensionRecyclerView6 = MutableLiveData<ArrayList<String>>()
-    val pensionRecyclerView6: LiveData<ArrayList<String>>
+    private val _pensionRecyclerView6 = MutableLiveData<ArrayList<Int>>()
+    val pensionRecyclerView6: LiveData<ArrayList<Int>>
         get() = _pensionRecyclerView6
 
-    private val _pensionRecyclerView7 = MutableLiveData<ArrayList<String>>()
-    val pensionRecyclerView7: LiveData<ArrayList<String>>
+    private val _pensionRecyclerView7 = MutableLiveData<ArrayList<Int>>()
+    val pensionRecyclerView7: LiveData<ArrayList<Int>>
         get() = _pensionRecyclerView7
 
     fun updateText(){
@@ -125,71 +124,71 @@ private fun getBonusNumber(): ArrayList<String>{
     return number
 }
 
-private fun getJoNumber(): ArrayList<String>{
-    val number : ArrayList<String> = arrayListOf()
+private fun getJoNumber(): ArrayList<Int>{
+    val number : ArrayList<Int> = arrayListOf()
     val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
     val doc = Jsoup.connect(url).get()
     for(i in 0..4){
-        number.add(doc.select("table#printTarget")[0].select("tbody").select("tr")[i].select("td")[2].ownText())
+        number.add(doc.select("table#printTarget")[0].select("tbody").select("tr")[i].select("td")[2].ownText().toInt())
     }
     return number
 }
 
-private fun getNumber1(): ArrayList<String>{
-    val number : ArrayList<String> = arrayListOf()
+private fun getNumber1(): ArrayList<Int>{
+    val number : ArrayList<Int> = arrayListOf()
     val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
     val doc = Jsoup.connect(url).get()
     for(i in 0..9){
-        number.add(doc.select("table#printTarget")[1].select("tbody").select("tr")[i].select("td")[2].ownText())
+        number.add(doc.select("table#printTarget")[1].select("tbody").select("tr")[i].select("td")[2].ownText().toInt())
     }
     return number
 }
 
-private fun getNumber2(): ArrayList<String>{
-    val number : ArrayList<String> = arrayListOf()
+private fun getNumber2(): ArrayList<Int>{
+    val number : ArrayList<Int> = arrayListOf()
     val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
     val doc = Jsoup.connect(url).get()
     for(i in 0..9){
-        number.add(doc.select("table#printTarget")[2].select("tbody").select("tr")[i].select("td")[2].ownText())
+        number.add(doc.select("table#printTarget")[2].select("tbody").select("tr")[i].select("td")[2].ownText().toInt())
     }
     return number
 }
 
-private fun getNumber3(): ArrayList<String>{
-    val number : ArrayList<String> = arrayListOf()
+private fun getNumber3(): ArrayList<Int>{
+    val number : ArrayList<Int> = arrayListOf()
     val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
     val doc = Jsoup.connect(url).get()
     for(i in 0..9){
-        number.add(doc.select("table#printTarget")[3].select("tbody").select("tr")[i].select("td")[2].ownText())
+        number.add(doc.select("table#printTarget")[3].select("tbody").select("tr")[i].select("td")[2].ownText().toInt())
     }
     return number
 }
 
-private fun getNumber4(): ArrayList<String>{
-    val number : ArrayList<String> = arrayListOf()
+private fun getNumber4(): ArrayList<Int>{
+    val number : ArrayList<Int> = arrayListOf()
     val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
     val doc = Jsoup.connect(url).get()
     for(i in 0..9){
-        number.add(doc.select("table#printTarget")[4].select("tbody").select("tr")[i].select("td")[2].ownText())
+        number.add(doc.select("table#printTarget")[4].select("tbody").select("tr")[i].select("td")[2].ownText().toInt())
     }
     return number
 }
 
-private fun getNumber5(): ArrayList<String>{
-    val number : ArrayList<String> = arrayListOf()
+private fun getNumber5(): ArrayList<Int>{
+    val number : ArrayList<Int> = arrayListOf()
     val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
     val doc = Jsoup.connect(url).get()
     for(i in 0..9){
-        number.add(doc.select("table#printTarget")[5].select("tbody").select("tr")[i].select("td")[2].ownText())
+        number.add(doc.select("table#printTarget")[5].select("tbody").select("tr")[i].select("td")[2].ownText().toInt())
     }
     return number
 }
-private fun getNumber6(): ArrayList<String>{
-    val number : ArrayList<String> = arrayListOf()
+private fun getNumber6(): ArrayList<Int>{
+    val number : ArrayList<Int> = arrayListOf()
     val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
     val doc = Jsoup.connect(url).get()
     for(i in 0..9){
-        number.add(doc.select("table#printTarget")[6].select("tbody").select("tr")[i].select("td")[2].ownText())
+        number.add(doc.select("table#printTarget")[6].select("tbody").select("tr")[i].select("td")[2].ownText().toInt())
     }
     return number
 }

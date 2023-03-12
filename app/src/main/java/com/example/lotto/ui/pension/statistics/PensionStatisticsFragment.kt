@@ -52,161 +52,36 @@ class PensionStatisticsFragment: Fragment() {
             pensionStatisticsViewModel.setNumberBackGround(it[5].toInt(),binding.BonusNumber6,6)
             binding.bonusTextView.isVisible = true
         })
-
+        //조
         pensionStatisticsViewModel.pensionRecyclerView1.observe(viewLifecycleOwner){
             binding.recyclerView1.adapter = PensionRecyclerViewAdapter(it,0)
         }
+        //십만
         pensionStatisticsViewModel.pensionRecyclerView2.observe(viewLifecycleOwner){
             binding.recyclerView2.adapter = PensionRecyclerViewAdapter(it,1)
         }
+        // 만
         pensionStatisticsViewModel.pensionRecyclerView3.observe(viewLifecycleOwner){
             binding.recyclerView3.adapter = PensionRecyclerViewAdapter(it,2)
         }
+        //천
         pensionStatisticsViewModel.pensionRecyclerView4.observe(viewLifecycleOwner){
             binding.recyclerView4.adapter = PensionRecyclerViewAdapter(it,3)
         }
+        //백
         pensionStatisticsViewModel.pensionRecyclerView5.observe(viewLifecycleOwner){
             binding.recyclerView5.adapter = PensionRecyclerViewAdapter(it,4)
         }
+        //십
         pensionStatisticsViewModel.pensionRecyclerView6.observe(viewLifecycleOwner){
             binding.recyclerView6.adapter = PensionRecyclerViewAdapter(it,5)
         }
+        //일
         pensionStatisticsViewModel.pensionRecyclerView7.observe(viewLifecycleOwner){
             binding.recyclerView7.adapter = PensionRecyclerViewAdapter(it,6)
         }
 
-        /*CoroutineScope(Dispatchers.IO).launch {
-            val number : MutableList<String> = mutableListOf()
-            val jo : String
-            val url = "https://dhlottery.co.kr/gameResult.do?method=win720"
-            val doc = Jsoup.connect(url).get()
 
-            jo = (doc.select("div.win_num_wrap")[0].select("div.win720_num").select("div.group").select("span.num.large").select("span")[1].ownText())
-
-            for (i in 1..6){
-                number.add(doc.select("div.win_num_wrap")[0].select("div.win720_num").select("span.num.al720_color$i.large").select("span")[1].ownText())
-            }
-            withContext(Dispatchers.Main){
-                binding.PastLPensionNumber.text = jo
-                binding.PastLPensionNumber2.text = number.toString()
-            }
-        }
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val number : MutableList<String> = mutableListOf()
-            val url = "https://dhlottery.co.kr/gameResult.do?method=win720"
-            val doc = Jsoup.connect(url).get()
-
-            for(i in 1..6){
-                number.add(doc.select("div.win_num_wrap")[1].select("div.win720_num").select("span.num.al720_color$i.large").select("span")[1].ownText())
-            }
-        }
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val number : ArrayList<String> = arrayListOf()
-            val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
-            val doc = Jsoup.connect(url).get()
-            for(i in 0..4){
-                number.add(doc.select("table#printTarget")[0].select("tbody").select("tr")[i].select("td")[2].ownText())
-            }
-            withContext(Dispatchers.Main){
-                val listAdapter = PensionRecyclerViewAdapter(number)
-                binding.recyclerView1.layoutManager = LinearLayoutManager(requireContext(),
-                    LinearLayoutManager.VERTICAL,false)
-                binding.recyclerView1.adapter = listAdapter
-                listAdapter.notifyDataSetChanged()
-            }
-        }
-        CoroutineScope(Dispatchers.IO).launch {
-            val number : ArrayList<String> = arrayListOf()
-            val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
-            val doc = Jsoup.connect(url).get()
-            for(i in 0..9){
-                number.add(doc.select("table#printTarget")[1].select("tbody").select("tr")[i].select("td")[2].ownText())
-            }
-            withContext(Dispatchers.Main){
-                val listAdapter = PensionRecyclerViewAdapter(number)
-                binding.recyclerView2.layoutManager = LinearLayoutManager(requireContext(),
-                    LinearLayoutManager.VERTICAL,false)
-                binding.recyclerView2.adapter = listAdapter
-                listAdapter.notifyDataSetChanged()
-            }
-        }
-        CoroutineScope(Dispatchers.IO).launch {
-            val number : ArrayList<String> = arrayListOf()
-            val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
-            val doc = Jsoup.connect(url).get()
-            for(i in 0..9){
-                number.add(doc.select("table#printTarget")[2].select("tbody").select("tr")[i].select("td")[2].ownText())
-            }
-            withContext(Dispatchers.Main){
-                val listAdapter = PensionRecyclerViewAdapter(number)
-                binding.recyclerView3.layoutManager = LinearLayoutManager(requireContext(),
-                    LinearLayoutManager.VERTICAL,false)
-                binding.recyclerView3.adapter = listAdapter
-                listAdapter.notifyDataSetChanged()
-            }
-        }
-        CoroutineScope(Dispatchers.IO).launch {
-            val number : ArrayList<String> = arrayListOf()
-            val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
-            val doc = Jsoup.connect(url).get()
-            for(i in 0..9){
-                number.add(doc.select("table#printTarget")[3].select("tbody").select("tr")[i].select("td")[2].ownText())
-            }
-            withContext(Dispatchers.Main){
-                val listAdapter = PensionRecyclerViewAdapter(number)
-                binding.recyclerView4.layoutManager = LinearLayoutManager(requireContext(),
-                    LinearLayoutManager.VERTICAL,false)
-                binding.recyclerView4.adapter = listAdapter
-                listAdapter.notifyDataSetChanged()
-            }
-        }
-        CoroutineScope(Dispatchers.IO).launch {
-            val number : ArrayList<String> = arrayListOf()
-            val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
-            val doc = Jsoup.connect(url).get()
-            for(i in 0..9){
-                number.add(doc.select("table#printTarget")[4].select("tbody").select("tr")[i].select("td")[2].ownText())
-            }
-            withContext(Dispatchers.Main){
-                val listAdapter = PensionRecyclerViewAdapter(number)
-                binding.recyclerView5.layoutManager = LinearLayoutManager(requireContext(),
-                    LinearLayoutManager.VERTICAL,false)
-                binding.recyclerView5.adapter = listAdapter
-                listAdapter.notifyDataSetChanged()
-            }
-        }
-        CoroutineScope(Dispatchers.IO).launch {
-            val number : ArrayList<String> = arrayListOf()
-            val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
-            val doc = Jsoup.connect(url).get()
-            for(i in 0..9){
-                number.add(doc.select("table#printTarget")[5].select("tbody").select("tr")[i].select("td")[2].ownText())
-            }
-            withContext(Dispatchers.Main){
-                val listAdapter = PensionRecyclerViewAdapter(number)
-                binding.recyclerView6.layoutManager = LinearLayoutManager(requireContext(),
-                    LinearLayoutManager.VERTICAL,false)
-                binding.recyclerView6.adapter = listAdapter
-                listAdapter.notifyDataSetChanged()
-            }
-        }
-        CoroutineScope(Dispatchers.IO).launch {
-            val number : ArrayList<String> = arrayListOf()
-            val url = "https://dhlottery.co.kr/gameResult.do?method=index720"
-            val doc = Jsoup.connect(url).get()
-            for(i in 0..9){
-                number.add(doc.select("table#printTarget")[6].select("tbody").select("tr")[i].select("td")[2].ownText())
-            }
-            withContext(Dispatchers.Main){
-                val listAdapter = PensionRecyclerViewAdapter(number)
-                binding.recyclerView7.layoutManager = LinearLayoutManager(requireContext(),
-                    LinearLayoutManager.VERTICAL,false)
-                binding.recyclerView7.adapter = listAdapter
-                listAdapter.notifyDataSetChanged()
-            }
-        }*/
         return binding.root
     }
     override fun onDestroyView() {
