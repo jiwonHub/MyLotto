@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lotto</string>
+    <string name="app_name">나의 로또번호</string>
     <string name="로또번호추첨기">로또번호추첨기</string>
     <string name="당첨번호">1등 당첨번호</string>
     <string name="todo">TODO</string>

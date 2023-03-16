@@ -27,6 +27,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/border_layout"
         app:layout_constraintBottom_toTopOf="@+id/start"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +53,7 @@
             android:layout_width="0dp"
             android:layout_height="1.5dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:contentDescription="@string/todo"
             android:layerType="hardware"
@@ -60,22 +61,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="0dp"
-            android:layout_height="1.5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="@string/todo"
-            android:layerType="hardware"
-            android:src="@drawable/dash_line"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
             android:id="@+id/textView1"
@@ -90,22 +76,38 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="1.5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/todo"
+            android:layerType="hardware"
+            android:src="@drawable/dash_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:weightSum="5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -202,9 +204,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.5dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:contentDescription="@string/todo"
                 android:layerType="hardware"
                 android:src="@drawable/dash_line" />
@@ -213,7 +215,7 @@
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -313,9 +315,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.5dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:contentDescription="@string/todo"
                 android:layerType="hardware"
                 android:src="@drawable/dash_line" />
@@ -324,7 +326,7 @@
                 android:id="@+id/linearLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -435,9 +437,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.5dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:contentDescription="@string/todo"
                 android:layerType="hardware"
                 android:src="@drawable/dash_line" />
@@ -446,7 +448,7 @@
                 android:id="@+id/linearLayout5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -557,9 +559,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.5dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:contentDescription="@string/todo"
                 android:layerType="hardware"
                 android:src="@drawable/dash_line" />
@@ -567,7 +569,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -677,9 +679,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.5dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:contentDescription="@string/todo"
                 android:layerType="hardware"
                 android:src="@drawable/dash_line" />
@@ -693,7 +695,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/gwangyang"
         android:text="@string/번호추첨"
         android:textColor="@color/textColor"
