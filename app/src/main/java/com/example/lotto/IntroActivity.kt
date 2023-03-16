@@ -32,7 +32,7 @@ class IntroActivity : AppCompatActivity() {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
-
+        binding.konfettiView.start(Presets.parade())
 
 
     }
