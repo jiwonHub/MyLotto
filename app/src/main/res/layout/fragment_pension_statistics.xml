@@ -42,8 +42,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:layout_marginStart="40dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="5sp"
+                app:layout_constraintEnd_toStartOf="@id/jo"
                 app:layout_constraintTop_toBottomOf="@id/PastLottoNumber" />
 
             <TextView
