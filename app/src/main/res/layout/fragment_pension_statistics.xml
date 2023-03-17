@@ -42,8 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@id/jo"
-                app:layout_constraintHorizontal_chainStyle="packed"
+                android:layout_marginStart="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/PastLottoNumber" />
 
@@ -57,68 +56,61 @@
                 android:textSize="14sp"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/PastLPensionNumber"
-                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber2"
-                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber"
+                app:layout_constraintEnd_toEndOf="@id/bonusTextView"
                 app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
                 android:id="@+id/PastLPensionNumber2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber3"
-                app:layout_constraintStart_toEndOf="@id/jo"
+                app:layout_constraintEnd_toEndOf="@id/BonusNumber1"
+                app:layout_constraintStart_toStartOf="@id/BonusNumber1"
                 app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
                 android:id="@+id/PastLPensionNumber3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber4"
-                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber2"
+                app:layout_constraintEnd_toEndOf="@id/BonusNumber2"
+                app:layout_constraintStart_toStartOf="@id/BonusNumber2"
                 app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
                 android:id="@+id/PastLPensionNumber4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber5"
-                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber3"
+                app:layout_constraintEnd_toEndOf="@id/BonusNumber3"
+                app:layout_constraintStart_toStartOf="@id/BonusNumber3"
                 app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
                 android:id="@+id/PastLPensionNumber5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber6"
-                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber4"
+                app:layout_constraintEnd_toEndOf="@id/BonusNumber4"
+                app:layout_constraintStart_toStartOf="@id/BonusNumber4"
                 app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
                 android:id="@+id/PastLPensionNumber6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@id/PastLPensionNumber7"
-                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber5"
+                app:layout_constraintEnd_toEndOf="@id/BonusNumber5"
+                app:layout_constraintStart_toStartOf="@id/BonusNumber5"
                 app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
                 android:id="@+id/PastLPensionNumber7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/PastLPensionNumber6"
+                app:layout_constraintEnd_toEndOf="@id/BonusNumber6"
+                app:layout_constraintStart_toStartOf="@+id/BonusNumber6"
                 app:layout_constraintTop_toTopOf="@id/PastLPensionNumber" />
 
             <TextView
@@ -127,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="23dp"
                 android:fontFamily="@font/gwangyang"
-                android:text="Bonus 모든 조"
+                android:text="Bonus 각 조"
                 android:textSize="14sp"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/BonusNumber1"
