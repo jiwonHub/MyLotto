@@ -18,12 +18,19 @@ class PensionRecyclerViewAdapter(private val itemList: ArrayList<Int>, private v
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.progress.max = itemList.max()
-        holder.name.text = (position).toString()
-        holder.progress.progress = itemList[position]
-        holder.count.text = itemList[position].toString() + "회"
-        setNumberBackGround(position+1,holder.name, i)
-
+        if (itemList.size == 5){
+            holder.progress.max = itemList.max()
+            holder.name.text = (position+1).toString()
+            holder.progress.progress = itemList[position]
+            holder.count.text = itemList[position].toString() + "회"
+            setNumberBackGround(position+1,holder.name, i)
+        }else{
+            holder.progress.max = itemList.max()
+            holder.name.text = (position).toString()
+            holder.progress.progress = itemList[position]
+            holder.count.text = itemList[position].toString() + "회"
+            setNumberBackGround(position+1,holder.name, i)
+        }
 
     }
 
